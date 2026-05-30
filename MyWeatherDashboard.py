@@ -51,8 +51,11 @@ class WeatherService:
                 'max_temp': round(v['temp_max'], 1),
                 'description': ', '.join(sorted(list(v['description'])))
             } for d, v in sorted(daily_forecast.items())]
+        except requests.exceptions.HTTPError as http_err:
+            print(f"HTTP 錯誤: {http_err}")
+            return None
         except Exception as e:
-            print(f"預報查詢失敗: {e}")
+            print(f"預報查詢時發生非預期錯誤: {e}")
             return None
 
     def get_current_weather(self, city_name: str) -> Optional[Dict[str, Any]]:
@@ -63,8 +66,11 @@ class WeatherService:
             resp = requests.get(url, params=params)
             resp.raise_for_status()
             return resp.json()
+        except requests.exceptions.HTTPError as http_err:
+            print(f"即時天氣 HTTP 錯誤: {http_err}")
+            return None
         except Exception as e:
-            print(f"即時天氣錯誤: {e}")
+            print(f"即時天氣非預期錯誤: {e}")
             return None
 
     def get_air_quality(self, lat: float, lon: float) -> Optional[Dict[str, Any]]:
@@ -75,8 +81,11 @@ class WeatherService:
             resp = requests.get(url, params=params)
             resp.raise_for_status()
             return resp.json()
+        except requests.exceptions.HTTPError as http_err:
+            print(f"空氣品質 HTTP 錯誤: {http_err}")
+            return None
         except Exception as e:
-            print(f"空氣品質錯誤: {e}")
+            print(f"空氣品質非預期錯誤: {e}")
             return None
 
 

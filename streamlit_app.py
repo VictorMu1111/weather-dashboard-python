@@ -33,12 +33,21 @@ def fetch_weather_data(_service, city):
 
 def main():
     st.title("🌤️ 全球天氣與空氣品質儀表板")
+
+    # 優先從 Streamlit Secrets 讀取 (雲端部署用)，若無則從本地環境變數讀取
+    api_key = st.secrets.get("OPENWEATHER_API_KEY", OPENWEATHER_API_KEY)
     
-    if not OPENWEATHER_API_KEY:
-        st.error("找不到 API 金鑰，請在 .env 檔案中設定 OPENWEATHER_API_KEY")
+    if not api_key:
+        st.error("❌ 找不到 API 金鑰！")
+        st.info("本地執行：請確保 .env 檔案中有 OPENWEATHER_API_KEY\n\n雲端部署：請在 Streamlit Cloud 的 Secrets 設定中加入金鑰。")
         return
 
-    weather_svc = WeatherService(OPENWEATHER_API_KEY)
+    try:
+        weather_svc = WeatherService(api_key)
+    except ValueError as e:
+        st.error(f"初始化服務失敗: {e}")
+        return
+        
     geo_data = load_geo_data()
     if not geo_data:
         return
@@ -107,7 +116,8 @@ def main():
                     # 轉換為表格顯示
                     st.table(forecast)
             else:
-                st.error(f"無法找到城市 '{target_city}' 的資料，請檢查名稱是否正確。")
+                st.error(f"⚠️ 無法取得 '{target_city}' 的天氣資料。")
+                st.warning("請檢查：\n1. 城市英文名稱是否正確 (例如: London, Taipei)\n2. API 金鑰是否有效\n3. 網路連線是否正常")
 
 if __name__ == "__main__":
     main()
