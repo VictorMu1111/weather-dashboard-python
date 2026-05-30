@@ -1,0 +1,10 @@
+# 環境變數檔案
+.env
+
+# Python 快取
+__pycache__/
+*.py[cod]
+
+# 系統檔案
+.DS_Store
+dist/

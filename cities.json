@@ -1,0 +1,62 @@
+{
+    "亞洲 (Asia)": {
+        "台灣 (Taiwan)": ["Taipei", "Taichung", "Kaohsiung", "Tainan", "Hsinchu"],
+        "中國 (China)": ["Shanghai", "Beijing", "Guangzhou", "Shenzhen", "Chengdu"],
+        "日本 (Japan)": ["Tokyo", "Yokohama", "Osaka", "Nagoya", "Sapporo"],
+        "韓國 (South Korea)": ["Seoul", "Busan", "Incheon", "Daegu", "Daejeon"],
+        "印度 (India)": ["Mumbai", "Delhi", "Bangalore", "Hyderabad", "Ahmedabad"],
+        "泰國 (Thailand)": ["Bangkok", "Chiang Mai", "Phuket", "Chon Buri", "Samut Prakan"],
+        "越南 (Vietnam)": ["Ho Chi Minh City", "Hanoi", "Da Nang", "Hai Phong", "Can Tho"],
+        "新加坡 (Singapore)": ["Singapore"],
+        "馬來西亞 (Malaysia)": ["Kuala Lumpur", "George Town", "Ipoh", "Shah Alam", "Petaling Jaya"],
+        "印尼 (Indonesia)": ["Jakarta", "Surabaya", "Bandung", "Medan", "Semarang"]
+    },
+    "歐洲 (Europe)": {
+        "英國 (UK)": ["London", "Birmingham", "Glasgow", "Liverpool", "Leeds"],
+        "法國 (France)": ["Paris", "Marseille", "Lyon", "Toulouse", "Nice"],
+        "德國 (Germany)": ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt"],
+        "義大利 (Italy)": ["Rome", "Milan", "Naples", "Turin", "Palermo"],
+        "西班牙 (Spain)": ["Madrid", "Barcelona", "Valencia", "Seville", "Zaragoza"],
+        "俄羅斯 (Russia)": ["Moscow", "Saint Petersburg", "Novosibirsk", "Yekaterinburg", "Kazan"],
+        "荷蘭 (Netherlands)": ["Amsterdam", "Rotterdam", "The Hague", "Utrecht", "Eindhoven"],
+        "瑞士 (Switzerland)": ["Zurich", "Geneva", "Basel", "Lausanne", "Bern"],
+        "波蘭 (Poland)": ["Warsaw", "Krakow", "Lodz", "Wroclaw", "Poznan"],
+        "土耳其 (Turkey)": ["Istanbul", "Ankara", "Izmir", "Bursa", "Adana"]
+    },
+    "美洲 (Americas)": {
+        "美國 (USA)": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix"],
+        "加拿大 (Canada)": ["Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton"],
+        "巴西 (Brazil)": ["Sao Paulo", "Rio de Janeiro", "Brasilia", "Salvador", "Fortaleza"],
+        "墨西哥 (Mexico)": ["Mexico City", "Tijuana", "Leon", "Puebla", "Juarez"],
+        "阿根廷 (Argentina)": ["Buenos Aires", "Cordoba", "Rosario", "Mendoza", "Tucuman"],
+        "哥倫比亞 (Colombia)": ["Bogota", "Medellin", "Cali", "Barranquilla", "Cartagena"],
+        "秘魯 (Peru)": ["Lima", "Arequipa", "Trujillo", "Chiclayo", "Piura"],
+        "智利 (Chile)": ["Santiago", "Valparaiso", "Concepcion", "La Serena", "Antofagasta"],
+        "古巴 (Cuba)": ["Havana", "Santiago de Cuba", "Camaguey", "Holguin", "Guantanamo"],
+        "委內瑞拉 (Venezuela)": ["Caracas", "Maracaibo", "Valencia", "Barquisimeto", "Maracay"]
+    },
+    "非洲 (Africa)": {
+        "埃及 (Egypt)": ["Cairo", "Alexandria", "Giza", "Shubra El Kheima", "Port Said"],
+        "奈及利亞 (Nigeria)": ["Lagos", "Kano", "Ibadan", "Benin City", "Port Harcourt"],
+        "南非 (South Africa)": ["Johannesburg", "Cape Town", "Durban", "Pretoria", "Port Elizabeth"],
+        "衣索比亞 (Ethiopia)": ["Addis Ababa", "Gondar", "Mekelle", "Adama", "Awasa"],
+        "肯亞 (Kenya)": ["Nairobi", "Mombasa", "Nakuru", "Kisumu", "Eldoret"],
+        "摩洛哥 (Morocco)": ["Casablanca", "Fez", "Tangier", "Marrakech", "Sale"],
+        "阿爾及利亞 (Algeria)": ["Algiers", "Oran", "Constantine", "Annaba", "Blida"],
+        "坦尚尼亞 (Tanzania)": ["Dar es Salaam", "Mwanza", "Arusha", "Dodoma", "Mbeya"],
+        "加納 (Ghana)": ["Accra", "Kumasi", "Tamale", "Takoradi", "Ashaiman"],
+        "烏干達 (Uganda)": ["Kampala", "Nansana", "Kira", "Makindye", "Mbarara"]
+    },
+    "大洋洲 (Oceania)": {
+        "澳洲 (Australia)": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide"],
+        "紐西蘭 (New Zealand)": ["Auckland", "Wellington", "Christchurch", "Hamilton", "Tauranga"],
+        "巴布亞紐幾內亞 (PNG)": ["Port Moresby", "Lae", "Arawa", "Mount Hagen", "Madang"],
+        "斐濟 (Fiji)": ["Suva", "Lautoka", "Nadi", "Labasa", "Ba"],
+        "所羅門群島 (Solomon Islands)": ["Honiara", "Gizo", "Auki", "Noro", "Tulagi"],
+        "萬那杜 (Vanuatu)": ["Port Vila", "Luganville", "Isangel", "Lakatoro", "Sola"],
+        "薩摩亞 (Samoa)": ["Apia", "Vaitele", "Faleasiu", "Vailele", "Leauvaa"],
+        "吉里巴斯 (Kiribati)": ["South Tarawa", "Betio", "Bikenibeu", "Teaoraereke", "Temwaiku"],
+        "湯加 (Tonga)": ["Nuku'alofa", "Neiafu", "Haveluloto", "Vaini", "Ohonua"],
+        "密克羅尼西亞 (Micronesia)": ["Palikir", "Weno", "Kolonia", "Tonoas", "Nett"]
+    }
+}
