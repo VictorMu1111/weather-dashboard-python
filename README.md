@@ -7,6 +7,10 @@
 - 即時天氣資訊（體感溫度、濕度、日落時間）。
 - 空氣品質指標 (AQI) 與健康建議。
 
+## 檔案結構
+- `MyWeatherDashboard.py`: 主程式邏輯。
+- `cities.json`: 預設的城市選單資料。
+
 ## 安裝與執行
 
 1. **複製專案**
@@ -17,6 +21,13 @@
 
 2. **安裝依賴**
    ```bash
+   # 建議建立虛擬環境
+   python -m venv venv
+   source venv/bin/activate  # macOS/Linux
+   # venv\Scripts\activate   # Windows
+
+   # 安裝套件
+   pip install --upgrade pip
    pip install -r requirements.txt
    ```
 
@@ -24,4 +35,9 @@
    建立 `.env` 檔案並填入你的 API Key：
    ```env
    OPENWEATHER_API_KEY='你的金鑰'
+   ```
+
+4. **啟動網頁介面**
+   ```bash
+   streamlit run streamlit_app.py
    ```

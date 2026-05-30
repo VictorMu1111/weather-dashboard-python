@@ -110,6 +110,11 @@ def aqi_health_advice(aqi: Optional[int]) -> str:
 
 # --- 主要執行部分 ---
 def main():
+    if not OPENWEATHER_API_KEY:
+        print("錯誤: 找不到 API 金鑰。")
+        print("請確保專案目錄下存在 .env 檔案並包含 OPENWEATHER_API_KEY='你的金鑰'")
+        return
+
     weather_svc = WeatherService(OPENWEATHER_API_KEY)
 
     # 1. 讀取外部地理資料檔案
