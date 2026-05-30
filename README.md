@@ -1,5 +1,8 @@
 # Weather Dashboard Tool
 
+## 🔗 線上體驗地址
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://weather-dashboard-demo.streamlit.app)
+
 這是一個基於 Python 的天氣與空氣品質查詢工具，串接 OpenWeather API 提供多層級選單式的城市查詢。
 
 ## 功能特點
@@ -41,3 +44,13 @@
    ```bash
    streamlit run streamlit_app.py
    ```
+
+## 雲端部署 (Streamlit Cloud)
+
+1. 將專案推送到 GitHub。
+2. 登入 [Streamlit Cloud](https://share.streamlit.io/) 並連結此儲存庫。
+3. 在 **Advanced settings > Secrets** 中設定環境變數：
+   ```toml
+   OPENWEATHER_API_KEY = "你的金鑰"
+   ```
+4. 部署後即可透過公開網址存取。

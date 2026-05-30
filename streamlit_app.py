@@ -113,6 +113,14 @@ def main():
                 st.markdown("---")
                 st.subheader("📅 未來 5 天天氣預報")
                 if forecast:
+                    # 建立溫度趨勢圖數據
+                    chart_data = {
+                        "日期": [d['date'] for d in forecast],
+                        "最低溫": [d['min_temp'] for d in forecast],
+                        "最高溫": [d['max_temp'] for d in forecast]
+                    }
+                    st.line_chart(data=chart_data, x="日期", y=["最低溫", "最高溫"])
+                    
                     # 轉換為表格顯示
                     st.table(forecast)
             else:
