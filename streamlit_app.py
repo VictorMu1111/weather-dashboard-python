@@ -9,7 +9,6 @@ st.set_page_config(page_title="全球天氣儀表板", page_icon="🌤️", layo
 
 current_dir = Path(__file__).parent.resolve()
 
-@st.cache_data
 def load_geo_data():
     try:
         with open(current_dir / 'cities.json', 'r', encoding='utf-8') as f:
