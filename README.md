@@ -1,56 +1,26 @@
-# Weather Dashboard Tool
+# 🌤️ 全球天氣與空氣品質儀表板
 
-## 🔗 線上體驗地址
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://weather-dashboard-python-vm.streamlit.app/)
+這是一個使用 Python 和 Streamlit 開發的即時天氣查詢系統，對接 OpenWeather API 提供全球城市的即時天氣、空氣品質細項以及未來五天的預報。
 
-這是一個基於 Python 的天氣與空氣品質查詢工具，串接 OpenWeather API 提供多層級選單式的城市查詢。
+## ✨ 功能特色
+- **即時天氣**：包含氣溫、體感溫度、濕度、日落時間與今日降雨機率。
+- **空氣品質**：顯示 AQI 指標，並針對 PM2.5 提供具體的戶外運動建議。
+- **5 天預報**：提供溫度趨勢圖表與詳細的氣象描述。
 
-## 功能特點
-- 提供 5 天天氣預報。
-- 即時天氣資訊（體感溫度、濕度、日落時間）。
-- 空氣品質指標 (AQI) 與健康建議。
+## 🚀 本地開發安裝步驟
 
-## 檔案結構
-- `MyWeatherDashboard.py`: 主程式邏輯。
-- `cities.json`: 預設的城市選單資料。
-
-## 安裝與執行
-
-1. **複製專案**
+1. **複製專案**：
    ```bash
-   git clone <你的 GitHub 專案網址>
-   cd "weather dashboard"
+   git clone [你的倉庫網址]
+   cd [專案目錄]
    ```
-
-2. **安裝依賴**
+2. **安裝必要套件**：
    ```bash
-   # 建議建立虛擬環境
-   python -m venv venv
-   source venv/bin/activate  # macOS/Linux
-   # venv\Scripts\activate   # Windows
-
-   # 安裝套件
-   pip install --upgrade pip
    pip install -r requirements.txt
    ```
-
-3. **設定環境變數**
-   建立 `.env` 檔案並填入你的 API Key：
-   ```env
-   OPENWEATHER_API_KEY='你的金鑰'
-   ```
-
-4. **啟動網頁介面**
+3. **設定 API 金鑰**：
+   在根目錄建立 `.env` 檔案並填入：`OPENWEATHER_API_KEY=你的金鑰`
+4. **啟動 App**：
    ```bash
    streamlit run streamlit_app.py
    ```
-
-## 雲端部署 (Streamlit Cloud)
-
-1. 將專案推送到 GitHub。
-2. 登入 [Streamlit Cloud](https://share.streamlit.io/) 並連結此儲存庫。
-3. 在 **Advanced settings > Secrets** 中設定環境變數：
-   ```toml
-   OPENWEATHER_API_KEY = "你的金鑰"
-   ```
-4. 部署後即可透過公開網址存取。

@@ -37,18 +37,20 @@ class WeatherService:
             response.raise_for_status()
             data = response.json()
 
-            daily_forecast = defaultdict(lambda: {'temp_min': float('inf'), 'temp_max': float('-inf'), 'description': set(), 'icon': set()})
+            daily_forecast = defaultdict(lambda: {'temp_min': float('inf'), 'temp_max': float('-inf'), 'description': set(), 'pop': 0.0})
             for item in data['list']:
                 date = datetime.fromisoformat(item['dt_txt']).date()
                 daily_forecast[date]['temp_min'] = min(daily_forecast[date]['temp_min'], item['main']['temp_min'])
                 daily_forecast[date]['temp_max'] = max(daily_forecast[date]['temp_max'], item['main']['temp_max'])
                 daily_forecast[date]['description'].add(item['weather'][0]['description'])
-                daily_forecast[date]['icon'].add(item['weather'][0]['icon'])
+                # 取得該時段的降雨機率 (pop)，取當天最大值
+                daily_forecast[date]['pop'] = max(daily_forecast[date]['pop'], item.get('pop', 0))
 
             return [{
                 'date': d.strftime('%Y-%m-%d'),
                 'min_temp': round(v['temp_min'], 1),
                 'max_temp': round(v['temp_max'], 1),
+                'pop': round(v['pop'] * 100),
                 'description': ', '.join(sorted(list(v['description'])))
             } for d, v in sorted(daily_forecast.items())]
         except requests.exceptions.HTTPError as http_err:
@@ -116,6 +118,33 @@ def aqi_health_advice(aqi: Optional[int]) -> str:
         5: "空氣品質非常差，建議避免所有戶外活動，並採取防護措施（關閉門窗、使用空氣清淨）。"
     }
     return advice.get(aqi, "無健康建議 (AQI 未知)")
+
+def get_component_status(key: str, value: float) -> str:
+    """根據污染物數值提供評級與建議。"""
+    # 參考 OpenWeather Air Pollution API 指標濃度標準
+    thresholds = {
+        'pm2_5': [(10, "良好"), (25, "普通"), (50, "不佳"), (75, "極差")],
+        'pm10': [(20, "良好"), (50, "普通"), (100, "不佳"), (200, "極差")],
+        'no2': [(40, "良好"), (70, "普通"), (150, "不佳"), (200, "極差")],
+        'so2': [(20, "良好"), (80, "普通"), (250, "不佳"), (350, "極差")],
+        'o3': [(60, "良好"), (100, "普通"), (140, "不佳"), (180, "極差")],
+        'co': [(4400, "良好"), (9400, "普通"), (12400, "不佳"), (15400, "極差")]
+    }
+    
+    if key not in thresholds:
+        return ""
+    
+    # 針對 PM2.5 提供運動建議
+    if key == 'pm2_5':
+        if value < 10: return "適合戶外運動"
+        if value < 25: return "運動尚可"
+        if value < 50: return "建議減少劇烈運動"
+        return "不建議戶外運動"
+
+    for limit, label in thresholds[key]:
+        if value < limit:
+            return label
+    return "極差"
 
 # --- 主要執行部分 ---
 def main():
@@ -205,14 +234,15 @@ def main():
             if forecast:
                 # 預報表格標頭
                 print(f"\n{target_city} 未來幾天的天氣預報:")
-                print("日期        | 最低   | 最高   | 天氣描述")
-                print("------------+--------+--------+----------------------------")
+                print("日期        | 最低   | 最高   | 降雨率 | 天氣描述")
+                print("------------+--------+--------+--------+----------------------------")
                 for day in forecast:
                     date = day['date']
                     min_t = f"{day['min_temp']}°C"
                     max_t = f"{day['max_temp']}°C"
+                    pop = f"{day['pop']}%"
                     desc = day['description']
-                    print(f"{date:12}| {min_t:6} | {max_t:6} | {desc}")
+                    print(f"{date:12}| {min_t:6} | {max_t:6} | {pop:6} | {desc}")
 
                 # 顯示當日即時天氣與空氣品質（格式化）
                 current = weather_svc.get_current_weather(target_city)
@@ -258,7 +288,8 @@ def main():
                                         val_str = f"{round(val,2)}"
                                     else:
                                         val_str = str(val)
-                                    print(f"{name:9} | {val_str:>17}")
+                                    status = get_component_status(k, val)
+                                    print(f"{name:9} | {val_str:>7} {status}")
                             # 顯示健康建議
                             print("\n健康建議:")
                             print(aqi_health_advice(aqi))

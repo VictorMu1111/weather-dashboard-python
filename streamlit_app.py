@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 from pathlib import Path
-from MyWeatherDashboard import WeatherService, OPENWEATHER_API_KEY, aqi_label, aqi_health_advice, component_ch_name
+from MyWeatherDashboard import WeatherService, OPENWEATHER_API_KEY, aqi_label, aqi_health_advice, component_ch_name, get_component_status
 from datetime import datetime, timezone, timedelta
 
 # 頁面設定
@@ -74,7 +74,7 @@ def main():
 
             if current:
                 st.subheader(f"📍 {target_city} 當前天氣")
-                col1, col2, col3, col4 = st.columns(4)
+                col1, col2, col3, col4, col5 = st.columns(5)
                 
                 temp = current['main'].get('temp')
                 feels = current['main'].get('feels_like')
@@ -90,6 +90,12 @@ def main():
                 sunset_local = datetime.fromtimestamp(sunset_ts, tz=timezone.utc).astimezone(
                     timezone(timedelta(seconds=timezone_offset))).strftime('%H:%M')
                 col4.metric("日落時間", sunset_local)
+
+                # 降雨機率 (從預報中取得今日數值)
+                today_pop = 0
+                if forecast:
+                    today_pop = forecast[0].get('pop', 0)
+                col5.metric("今日降雨率", f"{today_pop}%")
 
                 # 2. 空氣品質
                 if air and 'list' in air:
@@ -108,6 +114,9 @@ def main():
                     for i, (k, v) in enumerate(comps.items()):
                         comp_cols[i].caption(component_ch_name(k))
                         comp_cols[i].write(f"{v}")
+                        status = get_component_status(k, v)
+                        if status:
+                            comp_cols[i].caption(status)
 
                 # 3. 未來預報
                 st.markdown("---")
@@ -122,7 +131,16 @@ def main():
                     st.line_chart(data=chart_data, x="日期", y=["最低溫", "最高溫"])
                     
                     # 轉換為表格顯示
-                    st.table(forecast)
+                    display_forecast = []
+                    for d in forecast:
+                        display_forecast.append({
+                            "日期": d['date'],
+                            "最低溫 (°C)": d['min_temp'],
+                            "最高溫 (°C)": d['max_temp'],
+                            "降雨機率": f"{d['pop']}%",
+                            "天氣描述": d['description']
+                        })
+                    st.table(display_forecast)
             else:
                 st.error(f"⚠️ 無法取得 '{target_city}' 的天氣資料。")
                 st.warning("請檢查：\n1. 城市英文名稱是否正確 (例如: London, Taipei)\n2. API 金鑰是否有效\n3. 網路連線是否正常")

@@ -1,10 +1,9 @@
-# 環境變數檔案
-.env
-
-# Python 快取
+# Python 虛擬環境
+venv/
+env/
 __pycache__/
-*.py[cod]
+*.pyc
 
-# 系統檔案
+# 敏感資訊 (絕對不能上傳)
+.env
 .DS_Store
-dist/
