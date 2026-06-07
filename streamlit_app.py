@@ -80,8 +80,8 @@ def main():
                 feels = current['main'].get('feels_like')
                 humidity = current['main'].get('humidity')
                 
-                col1.metric("氣溫", f"{temp}°C")
-                col2.metric("體感溫度", f"{feels}°C")
+                col1.metric("氣溫", f"{int(round(temp)) if temp is not None else '--'}°C")
+                col2.metric("體感溫度", f"{int(round(feels)) if feels is not None else '--'}°C")
                 col3.metric("濕度", f"{humidity}%")
                 
                 # 日落時間處理
@@ -120,7 +120,8 @@ def main():
 
                 # 3. 未來預報
                 st.markdown("---")
-                st.subheader("📅 未來 5 天天氣預報")
+                st.subheader("📅 未來 7 天天氣預報")
+                st.caption("註：免費版 API 提供 5 天預報資料")
                 if forecast:
                     # 建立溫度趨勢圖數據
                     chart_data = {

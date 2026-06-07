@@ -48,8 +48,8 @@ class WeatherService:
 
             return [{
                 'date': d.strftime('%Y-%m-%d'),
-                'min_temp': round(v['temp_min'], 1),
-                'max_temp': round(v['temp_max'], 1),
+                'min_temp': int(round(v['temp_min'])),
+                'max_temp': int(round(v['temp_max'])),
                 'pop': round(v['pop'] * 100),
                 'description': ', '.join(sorted(list(v['description'])))
             } for d, v in sorted(daily_forecast.items())]
@@ -233,7 +233,7 @@ def main():
             forecast = weather_svc.get_daily_forecast(target_city)
             if forecast:
                 # 預報表格標頭
-                print(f"\n{target_city} 未來幾天的天氣預報:")
+                print(f"\n{target_city} 未來 7 天的天氣預報 (受 API 限制可能顯示 5-6 天):")
                 print("日期        | 最低   | 最高   | 降雨率 | 天氣描述")
                 print("------------+--------+--------+--------+----------------------------")
                 for day in forecast:
