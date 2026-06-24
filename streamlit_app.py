@@ -66,84 +66,90 @@ def main():
     if selected_city == "手動輸入":
         target_city = st.sidebar.text_input("請輸入城市英文名稱", value="London")
 
-    if st.sidebar.button("開始查詢"):
-        with st.spinner(f"正在獲取 {target_city} 的資料..."):
-            # 使用優化後的快取函式獲取資料
-            current, air, forecast = fetch_weather_data(weather_svc, target_city)
+    # 當 target_city 有效時，自動執行查詢
+    if target_city:
+        # 使用優化後的快取函式獲取資料
+        current, air, forecast = fetch_weather_data(weather_svc, target_city)
 
-            if current:
-                st.subheader(f"📍 {target_city} 當前天氣")
-                col1, col2, col3, col4, col5 = st.columns(5)
+        if current:
+            # --- 顯示當地時間 ---
+            timezone_offset = current.get('timezone', 0)
+            local_time = datetime.now(timezone.utc).astimezone(timezone(timedelta(seconds=timezone_offset)))
+            st.subheader(f"📍 {target_city}")
+            st.caption(f"當地時間: {local_time.strftime('%Y-%m-%d %H:%M:%S')}")
+            
+            st.markdown("---")
+            st.subheader(f"當前天氣")
+            col1, col2, col3, col4, col5 = st.columns(5)
+            
+            temp = current['main'].get('temp')
+            feels = current['main'].get('feels_like')
+            humidity = current['main'].get('humidity')
+            
+            col1.metric("氣溫", f"{int(round(temp)) if temp is not None else '--'}°C")
+            col2.metric("體感溫度", f"{int(round(feels)) if feels is not None else '--'}°C")
+            col3.metric("濕度", f"{humidity}%")
+            
+            # 日落時間處理
+            sunset_ts = current['sys'].get('sunset')
+            sunset_local = datetime.fromtimestamp(sunset_ts, tz=timezone.utc).astimezone(
+                timezone(timedelta(seconds=timezone_offset))).strftime('%H:%M')
+            col4.metric("日落時間", sunset_local)
+
+            # 降雨機率 (從預報中取得今日數值)
+            today_pop = 0
+            if forecast:
+                today_pop = forecast[0].get('pop', 0)
+            col5.metric("今日降雨率", f"{today_pop}%")
+
+            # 2. 空氣品質
+            if air and 'list' in air:
+                aq = air['list'][0]
+                aqi = aq['main']['aqi']
                 
-                temp = current['main'].get('temp')
-                feels = current['main'].get('feels_like')
-                humidity = current['main'].get('humidity')
-                
-                col1.metric("氣溫", f"{int(round(temp)) if temp is not None else '--'}°C")
-                col2.metric("體感溫度", f"{int(round(feels)) if feels is not None else '--'}°C")
-                col3.metric("濕度", f"{humidity}%")
-                
-                # 日落時間處理
-                sunset_ts = current['sys'].get('sunset')
-                timezone_offset = current.get('timezone', 0)
-                sunset_local = datetime.fromtimestamp(sunset_ts, tz=timezone.utc).astimezone(
-                    timezone(timedelta(seconds=timezone_offset))).strftime('%H:%M')
-                col4.metric("日落時間", sunset_local)
-
-                # 降雨機率 (從預報中取得今日數值)
-                today_pop = 0
-                if forecast:
-                    today_pop = forecast[0].get('pop', 0)
-                col5.metric("今日降雨率", f"{today_pop}%")
-
-                # 2. 空氣品質
-                if air and 'list' in air:
-                    aq = air['list'][0]
-                    aqi = aq['main']['aqi']
-                    
-                    st.markdown("---")
-                    st.subheader("🌫️ 空氣品質指標 (AQI)")
-                    
-                    aqi_colors = {1: "🟢", 2: "🟡", 3: "🟠", 4: "🔴", 5: "🟣"}
-                    st.info(f"{aqi_colors.get(aqi, '⚪')} **AQI 等級: {aqi} ({aqi_label(aqi)})**\n\n💡 {aqi_health_advice(aqi)}")
-                    
-                    # 污染物詳細數據
-                    comps = aq['components']
-                    comp_cols = st.columns(len(comps))
-                    for i, (k, v) in enumerate(comps.items()):
-                        comp_cols[i].caption(component_ch_name(k))
-                        comp_cols[i].write(f"{v}")
-                        status = get_component_status(k, v)
-                        if status:
-                            comp_cols[i].caption(status)
-
-                # 3. 未來預報
                 st.markdown("---")
-                st.subheader("📅 未來 7 天天氣預報")
-                st.caption("註：免費版 API 提供 5 天預報資料")
-                if forecast:
-                    # 建立溫度趨勢圖數據
-                    chart_data = {
-                        "日期": [d['date'] for d in forecast],
-                        "最低溫": [d['min_temp'] for d in forecast],
-                        "最高溫": [d['max_temp'] for d in forecast]
-                    }
-                    st.line_chart(data=chart_data, x="日期", y=["最低溫", "最高溫"])
-                    
-                    # 轉換為表格顯示
-                    display_forecast = []
-                    for d in forecast:
-                        display_forecast.append({
-                            "日期": d['date'],
-                            "最低溫 (°C)": d['min_temp'],
-                            "最高溫 (°C)": d['max_temp'],
-                            "降雨機率": f"{d['pop']}%",
-                            "天氣描述": d['description']
-                        })
-                    st.table(display_forecast)
-            else:
-                st.error(f"⚠️ 無法取得 '{target_city}' 的天氣資料。")
-                st.warning("請檢查：\n1. 城市英文名稱是否正確 (例如: London, Taipei)\n2. API 金鑰是否有效\n3. 網路連線是否正常")
+                st.subheader("🌫️ 空氣品質指標 (AQI)")
+                
+                aqi_colors = {1: "🟢", 2: "🟡", 3: "🟠", 4: "🔴", 5: "🟣"}
+                st.info(f"{aqi_colors.get(aqi, '⚪')} **AQI 等級: {aqi} ({aqi_label(aqi)})**\n\n💡 {aqi_health_advice(aqi)}")
+                
+                # 污染物詳細數據
+                comps = aq['components']
+                comp_cols = st.columns(len(comps))
+                for i, (k, v) in enumerate(comps.items()):
+                    comp_cols[i].caption(component_ch_name(k))
+                    comp_cols[i].write(f"{v}")
+                    status = get_component_status(k, v)
+                    if status:
+                        comp_cols[i].caption(status)
+
+            # 3. 未來預報
+            st.markdown("---")
+            st.subheader("📅 未來 7 天天氣預報")
+            st.caption("註：免費版 API 提供 5 天預報資料")
+            if forecast:
+                # 建立溫度趨勢圖數據
+                chart_data = {
+                    "日期": [d['date'] for d in forecast],
+                    "最低溫": [d['min_temp'] for d in forecast],
+                    "最高溫": [d['max_temp'] for d in forecast]
+                }
+                st.line_chart(data=chart_data, x="日期", y=["最低溫", "最高溫"])
+                
+                # 轉換為表格顯示
+                display_forecast = []
+                for d in forecast:
+                    display_forecast.append({
+                        "日期": d['date'],
+                        "最低溫 (°C)": d['min_temp'],
+                        "最高溫 (°C)": d['max_temp'],
+                        "降雨機率": f"{d['pop']}%",
+                        "天氣描述": d['description']
+                    })
+                st.table(display_forecast)
+        else:
+            st.error(f"⚠️ 無法取得 '{target_city}' 的天氣資料。")
+            st.warning("請檢查：\n1. 城市英文名稱是否正確 (例如: London, Taipei)\n2. API 金鑰是否有效\n3. 網路連線是否正常")
 
 if __name__ == "__main__":
     main()
