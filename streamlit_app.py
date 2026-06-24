@@ -63,9 +63,9 @@ def main():
     
     # 建立顯示名稱與值的對應
     city_options = {city['name']: (city['en'], city['country']) for city in cities_data}
+    selected_country_code = cities_data[0]['country'] if cities_data else ''
     
     # 側邊欄的 selectbox
-    # format_func 讓選單顯示中文名，但實際回傳的值是元組 (英文名, 國家代碼)
     display_names = list(city_options.keys()) + ["手動輸入"]
     selected_option = st.sidebar.selectbox("選擇城市", display_names)
 
@@ -73,8 +73,9 @@ def main():
     display_city_name = ""
     if selected_option == "手動輸入":
         manual_city = st.sidebar.text_input("請輸入城市英文名稱", value="London")
-        target_city_info = manual_city
-        display_city_name = manual_city
+        if manual_city:
+            target_city_info = (manual_city, selected_country_code) if selected_country_code else manual_city
+            display_city_name = manual_city
     else:
         target_city_info = city_options[selected_option]
         display_city_name = selected_option

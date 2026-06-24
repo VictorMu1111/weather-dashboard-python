@@ -225,13 +225,13 @@ def main():
         print(f"\n[第三層] {selected_region} > {selected_country} -> 請選擇城市：")
         for i, city_obj in enumerate(cities_data, 1):
             print(f"{i}. {city_obj['name']}")
-        print(f"{len(cities) + 1}. 手動輸入其他城市名稱")
+        print(f"{len(cities_data) + 1}. 手動輸入其他城市名稱")
         print("0. 回上層")
 
         choice3 = input("\n請輸入編號: ").strip()
         if choice3 == '0': continue
         
-        max_choice3 = len(cities) + 1
+        max_choice3 = len(cities_data) + 1
         if not choice3.isdigit() or not (1 <= int(choice3) <= max_choice3):
             print("無效輸入，請重新選擇。")
             continue
@@ -245,7 +245,10 @@ def main():
             display_city_name = city_obj['name']
         elif idx == len(cities_data):
             manual_city = input("請輸入城市英文名稱 (例如: Paris): ").strip()
-            target_city_info = manual_city
+            if country_code:
+                target_city_info = (manual_city, country_code)
+            else:
+                target_city_info = manual_city
             display_city_name = manual_city
         
         if target_city_info:
