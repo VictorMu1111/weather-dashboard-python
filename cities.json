@@ -1,62 +1,2612 @@
 {
     "亞洲 (Asia)": {
-        "台灣 (Taiwan)": ["Taipei", "Taichung", "Kaohsiung", "Tainan", "Hsinchu", "Taoyuan", "Keelung", "Chiayi", "Changhua", "Pingtung"],
-        "中國 (China)": ["Shanghai", "Beijing", "Guangzhou", "Shenzhen", "Chengdu", "Chongqing", "Hangzhou", "Wuhan", "Xi'an", "Nanjing"],
-        "日本 (Japan)": ["Tokyo", "Yokohama", "Osaka", "Nagoya", "Sapporo", "Fukuoka", "Kobe", "Kyoto", "Kawasaki", "Saitama"],
-        "韓國 (South Korea)": ["Seoul", "Busan", "Incheon", "Daegu", "Daejeon", "Gwangju", "Suwon", "Ulsan", "Changwon", "Goyang"],
-        "印度 (India)": ["Mumbai", "Delhi", "Bangalore", "Hyderabad", "Ahmedabad", "Chennai", "Kolkata", "Surat", "Pune", "Jaipur"],
-        "泰國 (Thailand)": ["Bangkok", "Chiang Mai", "Phuket", "Chon Buri", "Samut Prakan", "Nonthaburi", "Hat Yai", "Nakhon Ratchasima", "Udon Thani", "Surat Thani"],
-        "越南 (Vietnam)": ["Ho Chi Minh City", "Hanoi", "Da Nang", "Hai Phong", "Can Tho", "Bien Hoa", "Nha Trang", "Buon Ma Thuot", "Hue", "Long Xuyen"],
-        "新加坡 (Singapore)": ["Singapore", "Jurong East", "Tampines", "Woodlands", "Bedok", "Sengkang", "Punggol", "Yishun", "Ang Mo Kio", "Hougang"],
-        "馬來西亞 (Malaysia)": ["Kuala Lumpur", "George Town", "Ipoh", "Shah Alam", "Petaling Jaya", "Johor Bahru", "Malacca City", "Kota Kinabalu", "Kuching", "Alor Setar"],
-        "印尼 (Indonesia)": ["Jakarta", "Surabaya", "Bandung", "Medan", "Semarang", "Palembang", "Makassar", "Batam", "Pekanbaru", "Bandar Lampung"]
+        "台灣 (Taiwan)": [
+            {
+                "name": "Taipei",
+                "en": "Taipei",
+                "country": "TW"
+            },
+            {
+                "name": "Taichung",
+                "en": "Taichung",
+                "country": "TW"
+            },
+            {
+                "name": "Kaohsiung",
+                "en": "Kaohsiung",
+                "country": "TW"
+            },
+            {
+                "name": "Tainan",
+                "en": "Tainan",
+                "country": "TW"
+            },
+            {
+                "name": "Hsinchu",
+                "en": "Hsinchu",
+                "country": "TW"
+            },
+            {
+                "name": "Taoyuan",
+                "en": "Taoyuan",
+                "country": "TW"
+            },
+            {
+                "name": "Keelung",
+                "en": "Keelung",
+                "country": "TW"
+            },
+            {
+                "name": "Chiayi",
+                "en": "Chiayi",
+                "country": "TW"
+            },
+            {
+                "name": "Changhua",
+                "en": "Changhua",
+                "country": "TW"
+            },
+            {
+                "name": "Pingtung",
+                "en": "Pingtung",
+                "country": "TW"
+            }
+        ],
+        "中國 (China)": [
+            {
+                "name": "Shanghai",
+                "en": "Shanghai",
+                "country": "CN"
+            },
+            {
+                "name": "Beijing",
+                "en": "Beijing",
+                "country": "CN"
+            },
+            {
+                "name": "Guangzhou",
+                "en": "Guangzhou",
+                "country": "CN"
+            },
+            {
+                "name": "Shenzhen",
+                "en": "Shenzhen",
+                "country": "CN"
+            },
+            {
+                "name": "Chengdu",
+                "en": "Chengdu",
+                "country": "CN"
+            },
+            {
+                "name": "Chongqing",
+                "en": "Chongqing",
+                "country": "CN"
+            },
+            {
+                "name": "Hangzhou",
+                "en": "Hangzhou",
+                "country": "CN"
+            },
+            {
+                "name": "Wuhan",
+                "en": "Wuhan",
+                "country": "CN"
+            },
+            {
+                "name": "Xi'an",
+                "en": "Xi'an",
+                "country": "CN"
+            },
+            {
+                "name": "Nanjing",
+                "en": "Nanjing",
+                "country": "CN"
+            }
+        ],
+        "日本 (Japan)": [
+            {
+                "name": "Tokyo",
+                "en": "Tokyo",
+                "country": "JP"
+            },
+            {
+                "name": "Yokohama",
+                "en": "Yokohama",
+                "country": "JP"
+            },
+            {
+                "name": "Osaka",
+                "en": "Osaka",
+                "country": "JP"
+            },
+            {
+                "name": "Nagoya",
+                "en": "Nagoya",
+                "country": "JP"
+            },
+            {
+                "name": "Sapporo",
+                "en": "Sapporo",
+                "country": "JP"
+            },
+            {
+                "name": "Fukuoka",
+                "en": "Fukuoka",
+                "country": "JP"
+            },
+            {
+                "name": "Kobe",
+                "en": "Kobe",
+                "country": "JP"
+            },
+            {
+                "name": "Kyoto",
+                "en": "Kyoto",
+                "country": "JP"
+            },
+            {
+                "name": "Kawasaki",
+                "en": "Kawasaki",
+                "country": "JP"
+            },
+            {
+                "name": "Saitama",
+                "en": "Saitama",
+                "country": "JP"
+            }
+        ],
+        "韓國 (South Korea)": [
+            {
+                "name": "Seoul",
+                "en": "Seoul",
+                "country": "KR"
+            },
+            {
+                "name": "Busan",
+                "en": "Busan",
+                "country": "KR"
+            },
+            {
+                "name": "Incheon",
+                "en": "Incheon",
+                "country": "KR"
+            },
+            {
+                "name": "Daegu",
+                "en": "Daegu",
+                "country": "KR"
+            },
+            {
+                "name": "Daejeon",
+                "en": "Daejeon",
+                "country": "KR"
+            },
+            {
+                "name": "Gwangju",
+                "en": "Gwangju",
+                "country": "KR"
+            },
+            {
+                "name": "Suwon",
+                "en": "Suwon",
+                "country": "KR"
+            },
+            {
+                "name": "Ulsan",
+                "en": "Ulsan",
+                "country": "KR"
+            },
+            {
+                "name": "Changwon",
+                "en": "Changwon",
+                "country": "KR"
+            },
+            {
+                "name": "Goyang",
+                "en": "Goyang",
+                "country": "KR"
+            }
+        ],
+        "印度 (India)": [
+            {
+                "name": "Mumbai",
+                "en": "Mumbai",
+                "country": "IN"
+            },
+            {
+                "name": "Delhi",
+                "en": "Delhi",
+                "country": "IN"
+            },
+            {
+                "name": "Bangalore",
+                "en": "Bangalore",
+                "country": "IN"
+            },
+            {
+                "name": "Hyderabad",
+                "en": "Hyderabad",
+                "country": "IN"
+            },
+            {
+                "name": "Ahmedabad",
+                "en": "Ahmedabad",
+                "country": "IN"
+            },
+            {
+                "name": "Chennai",
+                "en": "Chennai",
+                "country": "IN"
+            },
+            {
+                "name": "Kolkata",
+                "en": "Kolkata",
+                "country": "IN"
+            },
+            {
+                "name": "Surat",
+                "en": "Surat",
+                "country": "IN"
+            },
+            {
+                "name": "Pune",
+                "en": "Pune",
+                "country": "IN"
+            },
+            {
+                "name": "Jaipur",
+                "en": "Jaipur",
+                "country": "IN"
+            }
+        ],
+        "泰國 (Thailand)": [
+            {
+                "name": "Bangkok",
+                "en": "Bangkok",
+                "country": "TH"
+            },
+            {
+                "name": "Chiang Mai",
+                "en": "Chiang Mai",
+                "country": "TH"
+            },
+            {
+                "name": "Phuket",
+                "en": "Phuket",
+                "country": "TH"
+            },
+            {
+                "name": "Chon Buri",
+                "en": "Chon Buri",
+                "country": "TH"
+            },
+            {
+                "name": "Samut Prakan",
+                "en": "Samut Prakan",
+                "country": "TH"
+            },
+            {
+                "name": "Nonthaburi",
+                "en": "Nonthaburi",
+                "country": "TH"
+            },
+            {
+                "name": "Hat Yai",
+                "en": "Hat Yai",
+                "country": "TH"
+            },
+            {
+                "name": "Nakhon Ratchasima",
+                "en": "Nakhon Ratchasima",
+                "country": "TH"
+            },
+            {
+                "name": "Udon Thani",
+                "en": "Udon Thani",
+                "country": "TH"
+            },
+            {
+                "name": "Surat Thani",
+                "en": "Surat Thani",
+                "country": "TH"
+            }
+        ],
+        "越南 (Vietnam)": [
+            {
+                "name": "Ho Chi Minh City",
+                "en": "Ho Chi Minh City",
+                "country": "VN"
+            },
+            {
+                "name": "Hanoi",
+                "en": "Hanoi",
+                "country": "VN"
+            },
+            {
+                "name": "Da Nang",
+                "en": "Da Nang",
+                "country": "VN"
+            },
+            {
+                "name": "Hai Phong",
+                "en": "Hai Phong",
+                "country": "VN"
+            },
+            {
+                "name": "Can Tho",
+                "en": "Can Tho",
+                "country": "VN"
+            },
+            {
+                "name": "Bien Hoa",
+                "en": "Bien Hoa",
+                "country": "VN"
+            },
+            {
+                "name": "Nha Trang",
+                "en": "Nha Trang",
+                "country": "VN"
+            },
+            {
+                "name": "Buon Ma Thuot",
+                "en": "Buon Ma Thuot",
+                "country": "VN"
+            },
+            {
+                "name": "Hue",
+                "en": "Hue",
+                "country": "VN"
+            },
+            {
+                "name": "Long Xuyen",
+                "en": "Long Xuyen",
+                "country": "VN"
+            }
+        ],
+        "新加坡 (Singapore)": [
+            {
+                "name": "Singapore",
+                "en": "Singapore",
+                "country": "SG"
+            },
+            {
+                "name": "Jurong East",
+                "en": "Jurong East",
+                "country": "SG"
+            },
+            {
+                "name": "Tampines",
+                "en": "Tampines",
+                "country": "SG"
+            },
+            {
+                "name": "Woodlands",
+                "en": "Woodlands",
+                "country": "SG"
+            },
+            {
+                "name": "Bedok",
+                "en": "Bedok",
+                "country": "SG"
+            },
+            {
+                "name": "Sengkang",
+                "en": "Sengkang",
+                "country": "SG"
+            },
+            {
+                "name": "Punggol",
+                "en": "Punggol",
+                "country": "SG"
+            },
+            {
+                "name": "Yishun",
+                "en": "Yishun",
+                "country": "SG"
+            },
+            {
+                "name": "Ang Mo Kio",
+                "en": "Ang Mo Kio",
+                "country": "SG"
+            },
+            {
+                "name": "Hougang",
+                "en": "Hougang",
+                "country": "SG"
+            }
+        ],
+        "馬來西亞 (Malaysia)": [
+            {
+                "name": "Kuala Lumpur",
+                "en": "Kuala Lumpur",
+                "country": "MY"
+            },
+            {
+                "name": "George Town",
+                "en": "George Town",
+                "country": "MY"
+            },
+            {
+                "name": "Ipoh",
+                "en": "Ipoh",
+                "country": "MY"
+            },
+            {
+                "name": "Shah Alam",
+                "en": "Shah Alam",
+                "country": "MY"
+            },
+            {
+                "name": "Petaling Jaya",
+                "en": "Petaling Jaya",
+                "country": "MY"
+            },
+            {
+                "name": "Johor Bahru",
+                "en": "Johor Bahru",
+                "country": "MY"
+            },
+            {
+                "name": "Malacca City",
+                "en": "Malacca City",
+                "country": "MY"
+            },
+            {
+                "name": "Kota Kinabalu",
+                "en": "Kota Kinabalu",
+                "country": "MY"
+            },
+            {
+                "name": "Kuching",
+                "en": "Kuching",
+                "country": "MY"
+            },
+            {
+                "name": "Alor Setar",
+                "en": "Alor Setar",
+                "country": "MY"
+            }
+        ],
+        "印尼 (Indonesia)": [
+            {
+                "name": "Jakarta",
+                "en": "Jakarta",
+                "country": "ID"
+            },
+            {
+                "name": "Surabaya",
+                "en": "Surabaya",
+                "country": "ID"
+            },
+            {
+                "name": "Bandung",
+                "en": "Bandung",
+                "country": "ID"
+            },
+            {
+                "name": "Medan",
+                "en": "Medan",
+                "country": "ID"
+            },
+            {
+                "name": "Semarang",
+                "en": "Semarang",
+                "country": "ID"
+            },
+            {
+                "name": "Palembang",
+                "en": "Palembang",
+                "country": "ID"
+            },
+            {
+                "name": "Makassar",
+                "en": "Makassar",
+                "country": "ID"
+            },
+            {
+                "name": "Batam",
+                "en": "Batam",
+                "country": "ID"
+            },
+            {
+                "name": "Pekanbaru",
+                "en": "Pekanbaru",
+                "country": "ID"
+            },
+            {
+                "name": "Bandar Lampung",
+                "en": "Bandar Lampung",
+                "country": "ID"
+            }
+        ]
     },
     "歐洲 (Europe)": {
-        "英國 (UK)": ["London", "Birmingham", "Glasgow", "Liverpool", "Leeds", "Sheffield", "Edinburgh", "Bristol", "Manchester", "Leicester"],
-        "法國 (France)": ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Montpellier", "Strasbourg", "Bordeaux", "Lille"],
-        "德國 (Germany)": ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt", "Stuttgart", "Düsseldorf", "Dortmund", "Essen", "Leipzig"],
-        "義大利 (Italy)": ["Rome", "Milan", "Naples", "Turin", "Palermo", "Genoa", "Bologna", "Florence", "Bari", "Catania"],
-        "西班牙 (Spain)": ["Madrid", "Barcelona", "Valencia", "Seville", "Zaragoza", "Malaga", "Murcia", "Palma", "Las Palmas", "Bilbao"],
-        "俄羅斯 (Russia)": ["Moscow", "Saint Petersburg", "Novosibirsk", "Yekaterinburg", "Kazan", "Nizhny Novgorod", "Chelyabinsk", "Samara", "Omsk", "Rostov-on-Don"],
-        "荷蘭 (Netherlands)": ["Amsterdam", "Rotterdam", "The Hague", "Utrecht", "Eindhoven", "Tilburg", "Almere", "Groningen", "Breda", "Nijmegen"],
-        "瑞士 (Switzerland)": ["Zurich", "Geneva", "Basel", "Lausanne", "Bern", "Winterthur", "Lucerne", "St. Gallen", "Lugano", "Biel/Bienne"],
-        "波蘭 (Poland)": ["Warsaw", "Krakow", "Lodz", "Wroclaw", "Poznan", "Gdansk", "Szczecin", "Bydgoszcz", "Lublin", "Bialystok"],
-        "土耳其 (Turkey)": ["Istanbul", "Ankara", "Izmir", "Bursa", "Adana", "Gaziantep", "Konya", "Antalya", "Kayseri", "Mersin"]
+        "英國 (UK)": [
+            {
+                "name": "London",
+                "en": "London",
+                "country": "GB"
+            },
+            {
+                "name": "Birmingham",
+                "en": "Birmingham",
+                "country": "GB"
+            },
+            {
+                "name": "Glasgow",
+                "en": "Glasgow",
+                "country": "GB"
+            },
+            {
+                "name": "Liverpool",
+                "en": "Liverpool",
+                "country": "GB"
+            },
+            {
+                "name": "Leeds",
+                "en": "Leeds",
+                "country": "GB"
+            },
+            {
+                "name": "Sheffield",
+                "en": "Sheffield",
+                "country": "GB"
+            },
+            {
+                "name": "Edinburgh",
+                "en": "Edinburgh",
+                "country": "GB"
+            },
+            {
+                "name": "Bristol",
+                "en": "Bristol",
+                "country": "GB"
+            },
+            {
+                "name": "Manchester",
+                "en": "Manchester",
+                "country": "GB"
+            },
+            {
+                "name": "Leicester",
+                "en": "Leicester",
+                "country": "GB"
+            }
+        ],
+        "法國 (France)": [
+            {
+                "name": "Paris",
+                "en": "Paris",
+                "country": "FR"
+            },
+            {
+                "name": "Marseille",
+                "en": "Marseille",
+                "country": "FR"
+            },
+            {
+                "name": "Lyon",
+                "en": "Lyon",
+                "country": "FR"
+            },
+            {
+                "name": "Toulouse",
+                "en": "Toulouse",
+                "country": "FR"
+            },
+            {
+                "name": "Nice",
+                "en": "Nice",
+                "country": "FR"
+            },
+            {
+                "name": "Nantes",
+                "en": "Nantes",
+                "country": "FR"
+            },
+            {
+                "name": "Montpellier",
+                "en": "Montpellier",
+                "country": "FR"
+            },
+            {
+                "name": "Strasbourg",
+                "en": "Strasbourg",
+                "country": "FR"
+            },
+            {
+                "name": "Bordeaux",
+                "en": "Bordeaux",
+                "country": "FR"
+            },
+            {
+                "name": "Lille",
+                "en": "Lille",
+                "country": "FR"
+            }
+        ],
+        "德國 (Germany)": [
+            {
+                "name": "Berlin",
+                "en": "Berlin",
+                "country": "DE"
+            },
+            {
+                "name": "Hamburg",
+                "en": "Hamburg",
+                "country": "DE"
+            },
+            {
+                "name": "Munich",
+                "en": "Munich",
+                "country": "DE"
+            },
+            {
+                "name": "Cologne",
+                "en": "Cologne",
+                "country": "DE"
+            },
+            {
+                "name": "Frankfurt",
+                "en": "Frankfurt",
+                "country": "DE"
+            },
+            {
+                "name": "Stuttgart",
+                "en": "Stuttgart",
+                "country": "DE"
+            },
+            {
+                "name": "Düsseldorf",
+                "en": "Düsseldorf",
+                "country": "DE"
+            },
+            {
+                "name": "Dortmund",
+                "en": "Dortmund",
+                "country": "DE"
+            },
+            {
+                "name": "Essen",
+                "en": "Essen",
+                "country": "DE"
+            },
+            {
+                "name": "Leipzig",
+                "en": "Leipzig",
+                "country": "DE"
+            }
+        ],
+        "義大利 (Italy)": [
+            {
+                "name": "Rome",
+                "en": "Rome",
+                "country": "IT"
+            },
+            {
+                "name": "Milan",
+                "en": "Milan",
+                "country": "IT"
+            },
+            {
+                "name": "Naples",
+                "en": "Naples",
+                "country": "IT"
+            },
+            {
+                "name": "Turin",
+                "en": "Turin",
+                "country": "IT"
+            },
+            {
+                "name": "Palermo",
+                "en": "Palermo",
+                "country": "IT"
+            },
+            {
+                "name": "Genoa",
+                "en": "Genoa",
+                "country": "IT"
+            },
+            {
+                "name": "Bologna",
+                "en": "Bologna",
+                "country": "IT"
+            },
+            {
+                "name": "Florence",
+                "en": "Florence",
+                "country": "IT"
+            },
+            {
+                "name": "Bari",
+                "en": "Bari",
+                "country": "IT"
+            },
+            {
+                "name": "Catania",
+                "en": "Catania",
+                "country": "IT"
+            }
+        ],
+        "西班牙 (Spain)": [
+            {
+                "name": "Madrid",
+                "en": "Madrid",
+                "country": "ES"
+            },
+            {
+                "name": "Barcelona",
+                "en": "Barcelona",
+                "country": "ES"
+            },
+            {
+                "name": "Valencia",
+                "en": "Valencia",
+                "country": "ES"
+            },
+            {
+                "name": "Seville",
+                "en": "Seville",
+                "country": "ES"
+            },
+            {
+                "name": "Zaragoza",
+                "en": "Zaragoza",
+                "country": "ES"
+            },
+            {
+                "name": "Malaga",
+                "en": "Malaga",
+                "country": "ES"
+            },
+            {
+                "name": "Murcia",
+                "en": "Murcia",
+                "country": "ES"
+            },
+            {
+                "name": "Palma",
+                "en": "Palma",
+                "country": "ES"
+            },
+            {
+                "name": "Las Palmas",
+                "en": "Las Palmas",
+                "country": "ES"
+            },
+            {
+                "name": "Bilbao",
+                "en": "Bilbao",
+                "country": "ES"
+            }
+        ],
+        "俄羅斯 (Russia)": [
+            {
+                "name": "Moscow",
+                "en": "Moscow",
+                "country": "RU"
+            },
+            {
+                "name": "Saint Petersburg",
+                "en": "Saint Petersburg",
+                "country": "RU"
+            },
+            {
+                "name": "Novosibirsk",
+                "en": "Novosibirsk",
+                "country": "RU"
+            },
+            {
+                "name": "Yekaterinburg",
+                "en": "Yekaterinburg",
+                "country": "RU"
+            },
+            {
+                "name": "Kazan",
+                "en": "Kazan",
+                "country": "RU"
+            },
+            {
+                "name": "Nizhny Novgorod",
+                "en": "Nizhny Novgorod",
+                "country": "RU"
+            },
+            {
+                "name": "Chelyabinsk",
+                "en": "Chelyabinsk",
+                "country": "RU"
+            },
+            {
+                "name": "Samara",
+                "en": "Samara",
+                "country": "RU"
+            },
+            {
+                "name": "Omsk",
+                "en": "Omsk",
+                "country": "RU"
+            },
+            {
+                "name": "Rostov-on-Don",
+                "en": "Rostov-on-Don",
+                "country": "RU"
+            }
+        ],
+        "荷蘭 (Netherlands)": [
+            {
+                "name": "Amsterdam",
+                "en": "Amsterdam",
+                "country": "NL"
+            },
+            {
+                "name": "Rotterdam",
+                "en": "Rotterdam",
+                "country": "NL"
+            },
+            {
+                "name": "The Hague",
+                "en": "The Hague",
+                "country": "NL"
+            },
+            {
+                "name": "Utrecht",
+                "en": "Utrecht",
+                "country": "NL"
+            },
+            {
+                "name": "Eindhoven",
+                "en": "Eindhoven",
+                "country": "NL"
+            },
+            {
+                "name": "Tilburg",
+                "en": "Tilburg",
+                "country": "NL"
+            },
+            {
+                "name": "Almere",
+                "en": "Almere",
+                "country": "NL"
+            },
+            {
+                "name": "Groningen",
+                "en": "Groningen",
+                "country": "NL"
+            },
+            {
+                "name": "Breda",
+                "en": "Breda",
+                "country": "NL"
+            },
+            {
+                "name": "Nijmegen",
+                "en": "Nijmegen",
+                "country": "NL"
+            }
+        ],
+        "瑞士 (Switzerland)": [
+            {
+                "name": "Zurich",
+                "en": "Zurich",
+                "country": "CH"
+            },
+            {
+                "name": "Geneva",
+                "en": "Geneva",
+                "country": "CH"
+            },
+            {
+                "name": "Basel",
+                "en": "Basel",
+                "country": "CH"
+            },
+            {
+                "name": "Lausanne",
+                "en": "Lausanne",
+                "country": "CH"
+            },
+            {
+                "name": "Bern",
+                "en": "Bern",
+                "country": "CH"
+            },
+            {
+                "name": "Winterthur",
+                "en": "Winterthur",
+                "country": "CH"
+            },
+            {
+                "name": "Lucerne",
+                "en": "Lucerne",
+                "country": "CH"
+            },
+            {
+                "name": "St. Gallen",
+                "en": "St. Gallen",
+                "country": "CH"
+            },
+            {
+                "name": "Lugano",
+                "en": "Lugano",
+                "country": "CH"
+            },
+            {
+                "name": "Biel/Bienne",
+                "en": "Biel/Bienne",
+                "country": "CH"
+            }
+        ],
+        "波蘭 (Poland)": [
+            {
+                "name": "Warsaw",
+                "en": "Warsaw",
+                "country": "PL"
+            },
+            {
+                "name": "Krakow",
+                "en": "Krakow",
+                "country": "PL"
+            },
+            {
+                "name": "Lodz",
+                "en": "Lodz",
+                "country": "PL"
+            },
+            {
+                "name": "Wroclaw",
+                "en": "Wroclaw",
+                "country": "PL"
+            },
+            {
+                "name": "Poznan",
+                "en": "Poznan",
+                "country": "PL"
+            },
+            {
+                "name": "Gdansk",
+                "en": "Gdansk",
+                "country": "PL"
+            },
+            {
+                "name": "Szczecin",
+                "en": "Szczecin",
+                "country": "PL"
+            },
+            {
+                "name": "Bydgoszcz",
+                "en": "Bydgoszcz",
+                "country": "PL"
+            },
+            {
+                "name": "Lublin",
+                "en": "Lublin",
+                "country": "PL"
+            },
+            {
+                "name": "Bialystok",
+                "en": "Bialystok",
+                "country": "PL"
+            }
+        ],
+        "土耳其 (Turkey)": [
+            {
+                "name": "Istanbul",
+                "en": "Istanbul",
+                "country": "TR"
+            },
+            {
+                "name": "Ankara",
+                "en": "Ankara",
+                "country": "TR"
+            },
+            {
+                "name": "Izmir",
+                "en": "Izmir",
+                "country": "TR"
+            },
+            {
+                "name": "Bursa",
+                "en": "Bursa",
+                "country": "TR"
+            },
+            {
+                "name": "Adana",
+                "en": "Adana",
+                "country": "TR"
+            },
+            {
+                "name": "Gaziantep",
+                "en": "Gaziantep",
+                "country": "TR"
+            },
+            {
+                "name": "Konya",
+                "en": "Konya",
+                "country": "TR"
+            },
+            {
+                "name": "Antalya",
+                "en": "Antalya",
+                "country": "TR"
+            },
+            {
+                "name": "Kayseri",
+                "en": "Kayseri",
+                "country": "TR"
+            },
+            {
+                "name": "Mersin",
+                "en": "Mersin",
+                "country": "TR"
+            }
+        ]
     },
     "美洲 (Americas)": {
-        "美國 (USA)": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose"],
-        "加拿大 (Canada)": ["Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton", "Ottawa", "Winnipeg", "Quebec City", "Hamilton", "Kitchener"],
-        "巴西 (Brazil)": ["Sao Paulo", "Rio de Janeiro", "Brasilia", "Salvador", "Fortaleza", "Belo Horizonte", "Manaus", "Curitiba", "Recife", "Port Alegre"],
-        "墨西哥 (Mexico)": ["Mexico City", "Tijuana", "Leon", "Puebla", "Juarez", "Guadalajara", "Zapopan", "Monterrey", "Nezahualcoyotl", "Chihuahua"],
-        "阿根廷 (Argentina)": ["Buenos Aires", "Cordoba", "Rosario", "Mendoza", "Tucuman", "La Plata", "Mar del Plata", "Salta", "Santa Fe", "San Juan"],
-        "哥倫比亞 (Colombia)": ["Bogota", "Medellin", "Cali", "Barranquilla", "Cartagena", "Cucuta", "Bucaramanga", "Pereira", "Santa Marta", "Ibague"],
-        "秘魯 (Peru)": ["Lima", "Arequipa", "Trujillo", "Chiclayo", "Piura", "Iquitos", "Cusco", "Huancayo", "Chimbote", "Pucallpa"],
-        "智利 (Chile)": ["Santiago", "Valparaiso", "Concepcion", "La Serena", "Antofagasta", "Temuco", "Rancagua", "Talca", "Arica", "Puerto Montt"],
-        "古巴 (Cuba)": ["Havana", "Santiago de Cuba", "Camaguey", "Holguin", "Guantanamo", "Santa Clara", "Las Tunas", "Bayamo", "Cienfuegos", "Pinar del Rio"],
-        "委內瑞拉 (Venezuela)": ["Caracas", "Maracaibo", "Valencia", "Barquisimeto", "Maracay", "Ciudad Guayana", "Barcelona", "Maturin", "Turmero", "Ciudad Bolivar"]
+        "美國 (USA)": [
+            {
+                "name": "New York",
+                "en": "New York",
+                "country": "US"
+            },
+            {
+                "name": "Los Angeles",
+                "en": "Los Angeles",
+                "country": "US"
+            },
+            {
+                "name": "Chicago",
+                "en": "Chicago",
+                "country": "US"
+            },
+            {
+                "name": "Houston",
+                "en": "Houston",
+                "country": "US"
+            },
+            {
+                "name": "Phoenix",
+                "en": "Phoenix",
+                "country": "US"
+            },
+            {
+                "name": "Philadelphia",
+                "en": "Philadelphia",
+                "country": "US"
+            },
+            {
+                "name": "San Antonio",
+                "en": "San Antonio",
+                "country": "US"
+            },
+            {
+                "name": "San Diego",
+                "en": "San Diego",
+                "country": "US"
+            },
+            {
+                "name": "Dallas",
+                "en": "Dallas",
+                "country": "US"
+            },
+            {
+                "name": "San Jose",
+                "en": "San Jose",
+                "country": "US"
+            }
+        ],
+        "加拿大 (Canada)": [
+            {
+                "name": "Toronto",
+                "en": "Toronto",
+                "country": "CA"
+            },
+            {
+                "name": "Montreal",
+                "en": "Montreal",
+                "country": "CA"
+            },
+            {
+                "name": "Vancouver",
+                "en": "Vancouver",
+                "country": "CA"
+            },
+            {
+                "name": "Calgary",
+                "en": "Calgary",
+                "country": "CA"
+            },
+            {
+                "name": "Edmonton",
+                "en": "Edmonton",
+                "country": "CA"
+            },
+            {
+                "name": "Ottawa",
+                "en": "Ottawa",
+                "country": "CA"
+            },
+            {
+                "name": "Winnipeg",
+                "en": "Winnipeg",
+                "country": "CA"
+            },
+            {
+                "name": "Quebec City",
+                "en": "Quebec City",
+                "country": "CA"
+            },
+            {
+                "name": "Hamilton",
+                "en": "Hamilton",
+                "country": "CA"
+            },
+            {
+                "name": "Kitchener",
+                "en": "Kitchener",
+                "country": "CA"
+            }
+        ],
+        "巴西 (Brazil)": [
+            {
+                "name": "Sao Paulo",
+                "en": "Sao Paulo",
+                "country": "BR"
+            },
+            {
+                "name": "Rio de Janeiro",
+                "en": "Rio de Janeiro",
+                "country": "BR"
+            },
+            {
+                "name": "Brasilia",
+                "en": "Brasilia",
+                "country": "BR"
+            },
+            {
+                "name": "Salvador",
+                "en": "Salvador",
+                "country": "BR"
+            },
+            {
+                "name": "Fortaleza",
+                "en": "Fortaleza",
+                "country": "BR"
+            },
+            {
+                "name": "Belo Horizonte",
+                "en": "Belo Horizonte",
+                "country": "BR"
+            },
+            {
+                "name": "Manaus",
+                "en": "Manaus",
+                "country": "BR"
+            },
+            {
+                "name": "Curitiba",
+                "en": "Curitiba",
+                "country": "BR"
+            },
+            {
+                "name": "Recife",
+                "en": "Recife",
+                "country": "BR"
+            },
+            {
+                "name": "Port Alegre",
+                "en": "Port Alegre",
+                "country": "BR"
+            }
+        ],
+        "墨西哥 (Mexico)": [
+            {
+                "name": "Mexico City",
+                "en": "Mexico City",
+                "country": "MX"
+            },
+            {
+                "name": "Tijuana",
+                "en": "Tijuana",
+                "country": "MX"
+            },
+            {
+                "name": "Leon",
+                "en": "Leon",
+                "country": "MX"
+            },
+            {
+                "name": "Puebla",
+                "en": "Puebla",
+                "country": "MX"
+            },
+            {
+                "name": "Juarez",
+                "en": "Juarez",
+                "country": "MX"
+            },
+            {
+                "name": "Guadalajara",
+                "en": "Guadalajara",
+                "country": "MX"
+            },
+            {
+                "name": "Zapopan",
+                "en": "Zapopan",
+                "country": "MX"
+            },
+            {
+                "name": "Monterrey",
+                "en": "Monterrey",
+                "country": "MX"
+            },
+            {
+                "name": "Nezahualcoyotl",
+                "en": "Nezahualcoyotl",
+                "country": "MX"
+            },
+            {
+                "name": "Chihuahua",
+                "en": "Chihuahua",
+                "country": "MX"
+            }
+        ],
+        "阿根廷 (Argentina)": [
+            {
+                "name": "Buenos Aires",
+                "en": "Buenos Aires",
+                "country": "AR"
+            },
+            {
+                "name": "Cordoba",
+                "en": "Cordoba",
+                "country": "AR"
+            },
+            {
+                "name": "Rosario",
+                "en": "Rosario",
+                "country": "AR"
+            },
+            {
+                "name": "Mendoza",
+                "en": "Mendoza",
+                "country": "AR"
+            },
+            {
+                "name": "Tucuman",
+                "en": "Tucuman",
+                "country": "AR"
+            },
+            {
+                "name": "La Plata",
+                "en": "La Plata",
+                "country": "AR"
+            },
+            {
+                "name": "Mar del Plata",
+                "en": "Mar del Plata",
+                "country": "AR"
+            },
+            {
+                "name": "Salta",
+                "en": "Salta",
+                "country": "AR"
+            },
+            {
+                "name": "Santa Fe",
+                "en": "Santa Fe",
+                "country": "AR"
+            },
+            {
+                "name": "San Juan",
+                "en": "San Juan",
+                "country": "AR"
+            }
+        ],
+        "哥倫比亞 (Colombia)": [
+            {
+                "name": "Bogota",
+                "en": "Bogota",
+                "country": "CO"
+            },
+            {
+                "name": "Medellin",
+                "en": "Medellin",
+                "country": "CO"
+            },
+            {
+                "name": "Cali",
+                "en": "Cali",
+                "country": "CO"
+            },
+            {
+                "name": "Barranquilla",
+                "en": "Barranquilla",
+                "country": "CO"
+            },
+            {
+                "name": "Cartagena",
+                "en": "Cartagena",
+                "country": "CO"
+            },
+            {
+                "name": "Cucuta",
+                "en": "Cucuta",
+                "country": "CO"
+            },
+            {
+                "name": "Bucaramanga",
+                "en": "Bucaramanga",
+                "country": "CO"
+            },
+            {
+                "name": "Pereira",
+                "en": "Pereira",
+                "country": "CO"
+            },
+            {
+                "name": "Santa Marta",
+                "en": "Santa Marta",
+                "country": "CO"
+            },
+            {
+                "name": "Ibague",
+                "en": "Ibague",
+                "country": "CO"
+            }
+        ],
+        "秘魯 (Peru)": [
+            {
+                "name": "Lima",
+                "en": "Lima",
+                "country": "PE"
+            },
+            {
+                "name": "Arequipa",
+                "en": "Arequipa",
+                "country": "PE"
+            },
+            {
+                "name": "Trujillo",
+                "en": "Trujillo",
+                "country": "PE"
+            },
+            {
+                "name": "Chiclayo",
+                "en": "Chiclayo",
+                "country": "PE"
+            },
+            {
+                "name": "Piura",
+                "en": "Piura",
+                "country": "PE"
+            },
+            {
+                "name": "Iquitos",
+                "en": "Iquitos",
+                "country": "PE"
+            },
+            {
+                "name": "Cusco",
+                "en": "Cusco",
+                "country": "PE"
+            },
+            {
+                "name": "Huancayo",
+                "en": "Huancayo",
+                "country": "PE"
+            },
+            {
+                "name": "Chimbote",
+                "en": "Chimbote",
+                "country": "PE"
+            },
+            {
+                "name": "Pucallpa",
+                "en": "Pucallpa",
+                "country": "PE"
+            }
+        ],
+        "智利 (Chile)": [
+            {
+                "name": "Santiago",
+                "en": "Santiago",
+                "country": "CL"
+            },
+            {
+                "name": "Valparaiso",
+                "en": "Valparaiso",
+                "country": "CL"
+            },
+            {
+                "name": "Concepcion",
+                "en": "Concepcion",
+                "country": "CL"
+            },
+            {
+                "name": "La Serena",
+                "en": "La Serena",
+                "country": "CL"
+            },
+            {
+                "name": "Antofagasta",
+                "en": "Antofagasta",
+                "country": "CL"
+            },
+            {
+                "name": "Temuco",
+                "en": "Temuco",
+                "country": "CL"
+            },
+            {
+                "name": "Rancagua",
+                "en": "Rancagua",
+                "country": "CL"
+            },
+            {
+                "name": "Talca",
+                "en": "Talca",
+                "country": "CL"
+            },
+            {
+                "name": "Arica",
+                "en": "Arica",
+                "country": "CL"
+            },
+            {
+                "name": "Puerto Montt",
+                "en": "Puerto Montt",
+                "country": "CL"
+            }
+        ],
+        "古巴 (Cuba)": [
+            {
+                "name": "Havana",
+                "en": "Havana",
+                "country": "CU"
+            },
+            {
+                "name": "Santiago de Cuba",
+                "en": "Santiago de Cuba",
+                "country": "CU"
+            },
+            {
+                "name": "Camaguey",
+                "en": "Camaguey",
+                "country": "CU"
+            },
+            {
+                "name": "Holguin",
+                "en": "Holguin",
+                "country": "CU"
+            },
+            {
+                "name": "Guantanamo",
+                "en": "Guantanamo",
+                "country": "CU"
+            },
+            {
+                "name": "Santa Clara",
+                "en": "Santa Clara",
+                "country": "CU"
+            },
+            {
+                "name": "Las Tunas",
+                "en": "Las Tunas",
+                "country": "CU"
+            },
+            {
+                "name": "Bayamo",
+                "en": "Bayamo",
+                "country": "CU"
+            },
+            {
+                "name": "Cienfuegos",
+                "en": "Cienfuegos",
+                "country": "CU"
+            },
+            {
+                "name": "Pinar del Rio",
+                "en": "Pinar del Rio",
+                "country": "CU"
+            }
+        ],
+        "委內瑞拉 (Venezuela)": [
+            {
+                "name": "Caracas",
+                "en": "Caracas",
+                "country": "VE"
+            },
+            {
+                "name": "Maracaibo",
+                "en": "Maracaibo",
+                "country": "VE"
+            },
+            {
+                "name": "Valencia",
+                "en": "Valencia",
+                "country": "VE"
+            },
+            {
+                "name": "Barquisimeto",
+                "en": "Barquisimeto",
+                "country": "VE"
+            },
+            {
+                "name": "Maracay",
+                "en": "Maracay",
+                "country": "VE"
+            },
+            {
+                "name": "Ciudad Guayana",
+                "en": "Ciudad Guayana",
+                "country": "VE"
+            },
+            {
+                "name": "Barcelona",
+                "en": "Barcelona",
+                "country": "VE"
+            },
+            {
+                "name": "Maturin",
+                "en": "Maturin",
+                "country": "VE"
+            },
+            {
+                "name": "Turmero",
+                "en": "Turmero",
+                "country": "VE"
+            },
+            {
+                "name": "Ciudad Bolivar",
+                "en": "Ciudad Bolivar",
+                "country": "VE"
+            }
+        ]
     },
     "非洲 (Africa)": {
-        "埃及 (Egypt)": ["Cairo", "Alexandria", "Giza", "Shubra El Kheima", "Port Said", "Suez", "Luxor", "Mansoura", "El Mahalla", "Tanta"],
-        "奈及利亞 (Nigeria)": ["Lagos", "Kano", "Ibadan", "Benin City", "Port Harcourt", "Jos", "Ilorin", "Abuja", "Kaduna", "Enugu"],
-        "南非 (South Africa)": ["Johannesburg", "Cape Town", "Durban", "Pretoria", "Port Elizabeth", "Bloemfontein", "Nelspruit", "Kimberley", "Polokwane", "Pietermaritzburg"],
-        "衣索比亞 (Ethiopia)": ["Addis Ababa", "Gondar", "Mekelle", "Adama", "Awasa", "Bahir Dar", "Dire Dawa", "Dessie", "Jimma", "Jijiga"],
-        "肯亞 (Kenya)": ["Nairobi", "Mombasa", "Nakuru", "Kisumu", "Eldoret", "Kehancha", "Ruiru", "Kikuyu", "Kangundo", "Malindi"],
-        "摩洛哥 (Morocco)": ["Casablanca", "Fez", "Tangier", "Marrakech", "Sale", "Rabat", "Meknes", "Oujda", "Kenitra", "Agadir"],
-        "阿爾及利亞 (Algeria)": ["Algiers", "Oran", "Constantine", "Annaba", "Blida", "Batna", "Djelfa", "Setif", "Sidi Bel Abbes", "Biskra"],
-        "坦尚尼亞 (Tanzania)": ["Dar es Salaam", "Mwanza", "Arusha", "Dodoma", "Mbeya", "Morogoro", "Tanga", "Kahama", "Tabora", "Zanzibar City"],
-        "加納 (Ghana)": ["Accra", "Kumasi", "Tamale", "Takoradi", "Ashaiman", "Tema", "Teshie", "Cape Coast", "Obuasi", "Madina"],
-        "烏干達 (Uganda)": ["Kampala", "Nansana", "Kira", "Makindye", "Mbarara", "Mbale", "Masaka", "Entebbe", "Gulu", "Jinja"]
+        "埃及 (Egypt)": [
+            {
+                "name": "Cairo",
+                "en": "Cairo",
+                "country": "EG"
+            },
+            {
+                "name": "Alexandria",
+                "en": "Alexandria",
+                "country": "EG"
+            },
+            {
+                "name": "Giza",
+                "en": "Giza",
+                "country": "EG"
+            },
+            {
+                "name": "Shubra El Kheima",
+                "en": "Shubra El Kheima",
+                "country": "EG"
+            },
+            {
+                "name": "Port Said",
+                "en": "Port Said",
+                "country": "EG"
+            },
+            {
+                "name": "Suez",
+                "en": "Suez",
+                "country": "EG"
+            },
+            {
+                "name": "Luxor",
+                "en": "Luxor",
+                "country": "EG"
+            },
+            {
+                "name": "Mansoura",
+                "en": "Mansoura",
+                "country": "EG"
+            },
+            {
+                "name": "El Mahalla",
+                "en": "El Mahalla",
+                "country": "EG"
+            },
+            {
+                "name": "Tanta",
+                "en": "Tanta",
+                "country": "EG"
+            }
+        ],
+        "奈及利亞 (Nigeria)": [
+            {
+                "name": "Lagos",
+                "en": "Lagos",
+                "country": "NG"
+            },
+            {
+                "name": "Kano",
+                "en": "Kano",
+                "country": "NG"
+            },
+            {
+                "name": "Ibadan",
+                "en": "Ibadan",
+                "country": "NG"
+            },
+            {
+                "name": "Benin City",
+                "en": "Benin City",
+                "country": "NG"
+            },
+            {
+                "name": "Port Harcourt",
+                "en": "Port Harcourt",
+                "country": "NG"
+            },
+            {
+                "name": "Jos",
+                "en": "Jos",
+                "country": "NG"
+            },
+            {
+                "name": "Ilorin",
+                "en": "Ilorin",
+                "country": "NG"
+            },
+            {
+                "name": "Abuja",
+                "en": "Abuja",
+                "country": "NG"
+            },
+            {
+                "name": "Kaduna",
+                "en": "Kaduna",
+                "country": "NG"
+            },
+            {
+                "name": "Enugu",
+                "en": "Enugu",
+                "country": "NG"
+            }
+        ],
+        "南非 (South Africa)": [
+            {
+                "name": "Johannesburg",
+                "en": "Johannesburg",
+                "country": "ZA"
+            },
+            {
+                "name": "Cape Town",
+                "en": "Cape Town",
+                "country": "ZA"
+            },
+            {
+                "name": "Durban",
+                "en": "Durban",
+                "country": "ZA"
+            },
+            {
+                "name": "Pretoria",
+                "en": "Pretoria",
+                "country": "ZA"
+            },
+            {
+                "name": "Port Elizabeth",
+                "en": "Port Elizabeth",
+                "country": "ZA"
+            },
+            {
+                "name": "Bloemfontein",
+                "en": "Bloemfontein",
+                "country": "ZA"
+            },
+            {
+                "name": "Nelspruit",
+                "en": "Nelspruit",
+                "country": "ZA"
+            },
+            {
+                "name": "Kimberley",
+                "en": "Kimberley",
+                "country": "ZA"
+            },
+            {
+                "name": "Polokwane",
+                "en": "Polokwane",
+                "country": "ZA"
+            },
+            {
+                "name": "Pietermaritzburg",
+                "en": "Pietermaritzburg",
+                "country": "ZA"
+            }
+        ],
+        "衣索比亞 (Ethiopia)": [
+            {
+                "name": "Addis Ababa",
+                "en": "Addis Ababa",
+                "country": "ET"
+            },
+            {
+                "name": "Gondar",
+                "en": "Gondar",
+                "country": "ET"
+            },
+            {
+                "name": "Mekelle",
+                "en": "Mekelle",
+                "country": "ET"
+            },
+            {
+                "name": "Adama",
+                "en": "Adama",
+                "country": "ET"
+            },
+            {
+                "name": "Awasa",
+                "en": "Awasa",
+                "country": "ET"
+            },
+            {
+                "name": "Bahir Dar",
+                "en": "Bahir Dar",
+                "country": "ET"
+            },
+            {
+                "name": "Dire Dawa",
+                "en": "Dire Dawa",
+                "country": "ET"
+            },
+            {
+                "name": "Dessie",
+                "en": "Dessie",
+                "country": "ET"
+            },
+            {
+                "name": "Jimma",
+                "en": "Jimma",
+                "country": "ET"
+            },
+            {
+                "name": "Jijiga",
+                "en": "Jijiga",
+                "country": "ET"
+            }
+        ],
+        "肯亞 (Kenya)": [
+            {
+                "name": "Nairobi",
+                "en": "Nairobi",
+                "country": "KE"
+            },
+            {
+                "name": "Mombasa",
+                "en": "Mombasa",
+                "country": "KE"
+            },
+            {
+                "name": "Nakuru",
+                "en": "Nakuru",
+                "country": "KE"
+            },
+            {
+                "name": "Kisumu",
+                "en": "Kisumu",
+                "country": "KE"
+            },
+            {
+                "name": "Eldoret",
+                "en": "Eldoret",
+                "country": "KE"
+            },
+            {
+                "name": "Kehancha",
+                "en": "Kehancha",
+                "country": "KE"
+            },
+            {
+                "name": "Ruiru",
+                "en": "Ruiru",
+                "country": "KE"
+            },
+            {
+                "name": "Kikuyu",
+                "en": "Kikuyu",
+                "country": "KE"
+            },
+            {
+                "name": "Kangundo",
+                "en": "Kangundo",
+                "country": "KE"
+            },
+            {
+                "name": "Malindi",
+                "en": "Malindi",
+                "country": "KE"
+            }
+        ],
+        "摩洛哥 (Morocco)": [
+            {
+                "name": "Casablanca",
+                "en": "Casablanca",
+                "country": "MA"
+            },
+            {
+                "name": "Fez",
+                "en": "Fez",
+                "country": "MA"
+            },
+            {
+                "name": "Tangier",
+                "en": "Tangier",
+                "country": "MA"
+            },
+            {
+                "name": "Marrakech",
+                "en": "Marrakech",
+                "country": "MA"
+            },
+            {
+                "name": "Sale",
+                "en": "Sale",
+                "country": "MA"
+            },
+            {
+                "name": "Rabat",
+                "en": "Rabat",
+                "country": "MA"
+            },
+            {
+                "name": "Meknes",
+                "en": "Meknes",
+                "country": "MA"
+            },
+            {
+                "name": "Oujda",
+                "en": "Oujda",
+                "country": "MA"
+            },
+            {
+                "name": "Kenitra",
+                "en": "Kenitra",
+                "country": "MA"
+            },
+            {
+                "name": "Agadir",
+                "en": "Agadir",
+                "country": "MA"
+            }
+        ],
+        "阿爾及利亞 (Algeria)": [
+            {
+                "name": "Algiers",
+                "en": "Algiers",
+                "country": "DZ"
+            },
+            {
+                "name": "Oran",
+                "en": "Oran",
+                "country": "DZ"
+            },
+            {
+                "name": "Constantine",
+                "en": "Constantine",
+                "country": "DZ"
+            },
+            {
+                "name": "Annaba",
+                "en": "Annaba",
+                "country": "DZ"
+            },
+            {
+                "name": "Blida",
+                "en": "Blida",
+                "country": "DZ"
+            },
+            {
+                "name": "Batna",
+                "en": "Batna",
+                "country": "DZ"
+            },
+            {
+                "name": "Djelfa",
+                "en": "Djelfa",
+                "country": "DZ"
+            },
+            {
+                "name": "Setif",
+                "en": "Setif",
+                "country": "DZ"
+            },
+            {
+                "name": "Sidi Bel Abbes",
+                "en": "Sidi Bel Abbes",
+                "country": "DZ"
+            },
+            {
+                "name": "Biskra",
+                "en": "Biskra",
+                "country": "DZ"
+            }
+        ],
+        "坦尚尼亞 (Tanzania)": [
+            {
+                "name": "Dar es Salaam",
+                "en": "Dar es Salaam",
+                "country": "TZ"
+            },
+            {
+                "name": "Mwanza",
+                "en": "Mwanza",
+                "country": "TZ"
+            },
+            {
+                "name": "Arusha",
+                "en": "Arusha",
+                "country": "TZ"
+            },
+            {
+                "name": "Dodoma",
+                "en": "Dodoma",
+                "country": "TZ"
+            },
+            {
+                "name": "Mbeya",
+                "en": "Mbeya",
+                "country": "TZ"
+            },
+            {
+                "name": "Morogoro",
+                "en": "Morogoro",
+                "country": "TZ"
+            },
+            {
+                "name": "Tanga",
+                "en": "Tanga",
+                "country": "TZ"
+            },
+            {
+                "name": "Kahama",
+                "en": "Kahama",
+                "country": "TZ"
+            },
+            {
+                "name": "Tabora",
+                "en": "Tabora",
+                "country": "TZ"
+            },
+            {
+                "name": "Zanzibar City",
+                "en": "Zanzibar City",
+                "country": "TZ"
+            }
+        ],
+        "加納 (Ghana)": [
+            {
+                "name": "Accra",
+                "en": "Accra",
+                "country": "GH"
+            },
+            {
+                "name": "Kumasi",
+                "en": "Kumasi",
+                "country": "GH"
+            },
+            {
+                "name": "Tamale",
+                "en": "Tamale",
+                "country": "GH"
+            },
+            {
+                "name": "Takoradi",
+                "en": "Takoradi",
+                "country": "GH"
+            },
+            {
+                "name": "Ashaiman",
+                "en": "Ashaiman",
+                "country": "GH"
+            },
+            {
+                "name": "Tema",
+                "en": "Tema",
+                "country": "GH"
+            },
+            {
+                "name": "Teshie",
+                "en": "Teshie",
+                "country": "GH"
+            },
+            {
+                "name": "Cape Coast",
+                "en": "Cape Coast",
+                "country": "GH"
+            },
+            {
+                "name": "Obuasi",
+                "en": "Obuasi",
+                "country": "GH"
+            },
+            {
+                "name": "Madina",
+                "en": "Madina",
+                "country": "GH"
+            }
+        ],
+        "烏干達 (Uganda)": [
+            {
+                "name": "Kampala",
+                "en": "Kampala",
+                "country": "UG"
+            },
+            {
+                "name": "Nansana",
+                "en": "Nansana",
+                "country": "UG"
+            },
+            {
+                "name": "Kira",
+                "en": "Kira",
+                "country": "UG"
+            },
+            {
+                "name": "Makindye",
+                "en": "Makindye",
+                "country": "UG"
+            },
+            {
+                "name": "Mbarara",
+                "en": "Mbarara",
+                "country": "UG"
+            },
+            {
+                "name": "Mbale",
+                "en": "Mbale",
+                "country": "UG"
+            },
+            {
+                "name": "Masaka",
+                "en": "Masaka",
+                "country": "UG"
+            },
+            {
+                "name": "Entebbe",
+                "en": "Entebbe",
+                "country": "UG"
+            },
+            {
+                "name": "Gulu",
+                "en": "Gulu",
+                "country": "UG"
+            },
+            {
+                "name": "Jinja",
+                "en": "Jinja",
+                "country": "UG"
+            }
+        ]
     },
     "大洋洲 (Oceania)": {
-        "澳洲 (Australia)": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Gold Coast", "Canberra", "Newcastle", "Central Coast", "Wollongong"],
-        "紐西蘭 (New Zealand)": ["Auckland", "Wellington", "Christchurch", "Hamilton", "Tauranga", "Lower Hutt", "Dunedin", "Palmerston North", "Napier", "Hibiscus Coast"],
-        "巴布亞紐幾內亞 (PNG)": ["Port Moresby", "Lae", "Arawa", "Mount Hagen", "Madang", "Wewak", "Goroka", "Kimbe", "Popondetta", "Kavieng"],
-        "斐濟 (Fiji)": ["Suva", "Lautoka", "Nadi", "Labasa", "Ba", "Levuka", "Savusavu", "Sigatoka", "Tavua", "Nausori"],
-        "所羅門群島 (Solomon Islands)": ["Honiara", "Gizo", "Auki", "Noro", "Tulagi", "Buala", "Kirakira", "Lata", "Munda", "Taro Island"],
-        "萬那杜 (Vanuatu)": ["Port Vila", "Luganville", "Isangel", "Lakatoro", "Sola", "Port-Olry", "Mele", "Norsup", "Lenakel", "Litzlitz"],
-        "薩摩亞 (Samoa)": ["Apia", "Vaitele", "Faleasiu", "Vailele", "Leauvaa", "Afega", "Solosolo", "Lufilufi", "Safotu", "Sapapalii"],
-        "吉里巴斯 (Kiribati)": ["South Tarawa", "Betio", "Bikenibeu", "Teaoraereke", "Temwaiku", "Eita", "Bonriki", "Ambo", "Taborio", "Buota"],
-        "湯加 (Tonga)": ["Nuku'alofa", "Neiafu", "Haveluloto", "Vaini", "Ohonua", "Hihifo", "Pangai", "Tatakamotonga", "Pea", "Kolonga"],
-        "密克羅尼西亞 (Micronesia)": ["Palikir", "Weno", "Kolonia", "Tonoas", "Nett", "Kitti", "Madolenihmw", "Kapingamarangi", "Sokehs", "Sapwuahfik"]
+        "澳洲 (Australia)": [
+            {
+                "name": "Sydney",
+                "en": "Sydney",
+                "country": "AU"
+            },
+            {
+                "name": "Melbourne",
+                "en": "Melbourne",
+                "country": "AU"
+            },
+            {
+                "name": "Brisbane",
+                "en": "Brisbane",
+                "country": "AU"
+            },
+            {
+                "name": "Perth",
+                "en": "Perth",
+                "country": "AU"
+            },
+            {
+                "name": "Adelaide",
+                "en": "Adelaide",
+                "country": "AU"
+            },
+            {
+                "name": "Gold Coast",
+                "en": "Gold Coast",
+                "country": "AU"
+            },
+            {
+                "name": "Canberra",
+                "en": "Canberra",
+                "country": "AU"
+            },
+            {
+                "name": "Newcastle",
+                "en": "Newcastle",
+                "country": "AU"
+            },
+            {
+                "name": "Central Coast",
+                "en": "Central Coast",
+                "country": "AU"
+            },
+            {
+                "name": "Wollongong",
+                "en": "Wollongong",
+                "country": "AU"
+            }
+        ],
+        "紐西蘭 (New Zealand)": [
+            {
+                "name": "Auckland",
+                "en": "Auckland",
+                "country": "NZ"
+            },
+            {
+                "name": "Wellington",
+                "en": "Wellington",
+                "country": "NZ"
+            },
+            {
+                "name": "Christchurch",
+                "en": "Christchurch",
+                "country": "NZ"
+            },
+            {
+                "name": "Hamilton",
+                "en": "Hamilton",
+                "country": "NZ"
+            },
+            {
+                "name": "Tauranga",
+                "en": "Tauranga",
+                "country": "NZ"
+            },
+            {
+                "name": "Lower Hutt",
+                "en": "Lower Hutt",
+                "country": "NZ"
+            },
+            {
+                "name": "Dunedin",
+                "en": "Dunedin",
+                "country": "NZ"
+            },
+            {
+                "name": "Palmerston North",
+                "en": "Palmerston North",
+                "country": "NZ"
+            },
+            {
+                "name": "Napier",
+                "en": "Napier",
+                "country": "NZ"
+            },
+            {
+                "name": "Hibiscus Coast",
+                "en": "Hibiscus Coast",
+                "country": "NZ"
+            }
+        ],
+        "巴布亞紐幾內亞 (PNG)": [
+            {
+                "name": "Port Moresby",
+                "en": "Port Moresby",
+                "country": "PG"
+            },
+            {
+                "name": "Lae",
+                "en": "Lae",
+                "country": "PG"
+            },
+            {
+                "name": "Arawa",
+                "en": "Arawa",
+                "country": "PG"
+            },
+            {
+                "name": "Mount Hagen",
+                "en": "Mount Hagen",
+                "country": "PG"
+            },
+            {
+                "name": "Madang",
+                "en": "Madang",
+                "country": "PG"
+            },
+            {
+                "name": "Wewak",
+                "en": "Wewak",
+                "country": "PG"
+            },
+            {
+                "name": "Goroka",
+                "en": "Goroka",
+                "country": "PG"
+            },
+            {
+                "name": "Kimbe",
+                "en": "Kimbe",
+                "country": "PG"
+            },
+            {
+                "name": "Popondetta",
+                "en": "Popondetta",
+                "country": "PG"
+            },
+            {
+                "name": "Kavieng",
+                "en": "Kavieng",
+                "country": "PG"
+            }
+        ],
+        "斐濟 (Fiji)": [
+            {
+                "name": "Suva",
+                "en": "Suva",
+                "country": "FJ"
+            },
+            {
+                "name": "Lautoka",
+                "en": "Lautoka",
+                "country": "FJ"
+            },
+            {
+                "name": "Nadi",
+                "en": "Nadi",
+                "country": "FJ"
+            },
+            {
+                "name": "Labasa",
+                "en": "Labasa",
+                "country": "FJ"
+            },
+            {
+                "name": "Ba",
+                "en": "Ba",
+                "country": "FJ"
+            },
+            {
+                "name": "Levuka",
+                "en": "Levuka",
+                "country": "FJ"
+            },
+            {
+                "name": "Savusavu",
+                "en": "Savusavu",
+                "country": "FJ"
+            },
+            {
+                "name": "Sigatoka",
+                "en": "Sigatoka",
+                "country": "FJ"
+            },
+            {
+                "name": "Tavua",
+                "en": "Tavua",
+                "country": "FJ"
+            },
+            {
+                "name": "Nausori",
+                "en": "Nausori",
+                "country": "FJ"
+            }
+        ],
+        "所羅門群島 (Solomon Islands)": [
+            {
+                "name": "Honiara",
+                "en": "Honiara",
+                "country": "SB"
+            },
+            {
+                "name": "Gizo",
+                "en": "Gizo",
+                "country": "SB"
+            },
+            {
+                "name": "Auki",
+                "en": "Auki",
+                "country": "SB"
+            },
+            {
+                "name": "Noro",
+                "en": "Noro",
+                "country": "SB"
+            },
+            {
+                "name": "Tulagi",
+                "en": "Tulagi",
+                "country": "SB"
+            },
+            {
+                "name": "Buala",
+                "en": "Buala",
+                "country": "SB"
+            },
+            {
+                "name": "Kirakira",
+                "en": "Kirakira",
+                "country": "SB"
+            },
+            {
+                "name": "Lata",
+                "en": "Lata",
+                "country": "SB"
+            },
+            {
+                "name": "Munda",
+                "en": "Munda",
+                "country": "SB"
+            },
+            {
+                "name": "Taro Island",
+                "en": "Taro Island",
+                "country": "SB"
+            }
+        ],
+        "萬那杜 (Vanuatu)": [
+            {
+                "name": "Port Vila",
+                "en": "Port Vila",
+                "country": "VU"
+            },
+            {
+                "name": "Luganville",
+                "en": "Luganville",
+                "country": "VU"
+            },
+            {
+                "name": "Isangel",
+                "en": "Isangel",
+                "country": "VU"
+            },
+            {
+                "name": "Lakatoro",
+                "en": "Lakatoro",
+                "country": "VU"
+            },
+            {
+                "name": "Sola",
+                "en": "Sola",
+                "country": "VU"
+            },
+            {
+                "name": "Port-Olry",
+                "en": "Port-Olry",
+                "country": "VU"
+            },
+            {
+                "name": "Mele",
+                "en": "Mele",
+                "country": "VU"
+            },
+            {
+                "name": "Norsup",
+                "en": "Norsup",
+                "country": "VU"
+            },
+            {
+                "name": "Lenakel",
+                "en": "Lenakel",
+                "country": "VU"
+            },
+            {
+                "name": "Litzlitz",
+                "en": "Litzlitz",
+                "country": "VU"
+            }
+        ],
+        "薩摩亞 (Samoa)": [
+            {
+                "name": "Apia",
+                "en": "Apia",
+                "country": "WS"
+            },
+            {
+                "name": "Vaitele",
+                "en": "Vaitele",
+                "country": "WS"
+            },
+            {
+                "name": "Faleasiu",
+                "en": "Faleasiu",
+                "country": "WS"
+            },
+            {
+                "name": "Vailele",
+                "en": "Vailele",
+                "country": "WS"
+            },
+            {
+                "name": "Leauvaa",
+                "en": "Leauvaa",
+                "country": "WS"
+            },
+            {
+                "name": "Afega",
+                "en": "Afega",
+                "country": "WS"
+            },
+            {
+                "name": "Solosolo",
+                "en": "Solosolo",
+                "country": "WS"
+            },
+            {
+                "name": "Lufilufi",
+                "en": "Lufilufi",
+                "country": "WS"
+            },
+            {
+                "name": "Safotu",
+                "en": "Safotu",
+                "country": "WS"
+            },
+            {
+                "name": "Sapapalii",
+                "en": "Sapapalii",
+                "country": "WS"
+            }
+        ],
+        "吉里巴斯 (Kiribati)": [
+            {
+                "name": "South Tarawa",
+                "en": "South Tarawa",
+                "country": "KI"
+            },
+            {
+                "name": "Betio",
+                "en": "Betio",
+                "country": "KI"
+            },
+            {
+                "name": "Bikenibeu",
+                "en": "Bikenibeu",
+                "country": "KI"
+            },
+            {
+                "name": "Teaoraereke",
+                "en": "Teaoraereke",
+                "country": "KI"
+            },
+            {
+                "name": "Temwaiku",
+                "en": "Temwaiku",
+                "country": "KI"
+            },
+            {
+                "name": "Eita",
+                "en": "Eita",
+                "country": "KI"
+            },
+            {
+                "name": "Bonriki",
+                "en": "Bonriki",
+                "country": "KI"
+            },
+            {
+                "name": "Ambo",
+                "en": "Ambo",
+                "country": "KI"
+            },
+            {
+                "name": "Taborio",
+                "en": "Taborio",
+                "country": "KI"
+            },
+            {
+                "name": "Buota",
+                "en": "Buota",
+                "country": "KI"
+            }
+        ],
+        "湯加 (Tonga)": [
+            {
+                "name": "Nuku'alofa",
+                "en": "Nuku'alofa",
+                "country": ""
+            },
+            {
+                "name": "Neiafu",
+                "en": "Neiafu",
+                "country": ""
+            },
+            {
+                "name": "Haveluloto",
+                "en": "Haveluloto",
+                "country": ""
+            },
+            {
+                "name": "Vaini",
+                "en": "Vaini",
+                "country": ""
+            },
+            {
+                "name": "Ohonua",
+                "en": "Ohonua",
+                "country": ""
+            },
+            {
+                "name": "Hihifo",
+                "en": "Hihifo",
+                "country": ""
+            },
+            {
+                "name": "Pangai",
+                "en": "Pangai",
+                "country": ""
+            },
+            {
+                "name": "Tatakamotonga",
+                "en": "Tatakamotonga",
+                "country": ""
+            },
+            {
+                "name": "Pea",
+                "en": "Pea",
+                "country": ""
+            },
+            {
+                "name": "Kolonga",
+                "en": "Kolonga",
+                "country": ""
+            }
+        ],
+        "密克羅尼西亞 (Micronesia)": [
+            {
+                "name": "Palikir",
+                "en": "Palikir",
+                "country": ""
+            },
+            {
+                "name": "Weno",
+                "en": "Weno",
+                "country": ""
+            },
+            {
+                "name": "Kolonia",
+                "en": "Kolonia",
+                "country": ""
+            },
+            {
+                "name": "Tonoas",
+                "en": "Tonoas",
+                "country": ""
+            },
+            {
+                "name": "Nett",
+                "en": "Nett",
+                "country": ""
+            },
+            {
+                "name": "Kitti",
+                "en": "Kitti",
+                "country": ""
+            },
+            {
+                "name": "Madolenihmw",
+                "en": "Madolenihmw",
+                "country": ""
+            },
+            {
+                "name": "Kapingamarangi",
+                "en": "Kapingamarangi",
+                "country": ""
+            },
+            {
+                "name": "Sokehs",
+                "en": "Sokehs",
+                "country": ""
+            },
+            {
+                "name": "Sapwuahfik",
+                "en": "Sapwuahfik",
+                "country": ""
+            }
+        ]
     }
 }
