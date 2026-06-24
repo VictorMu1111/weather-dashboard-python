@@ -27,11 +27,18 @@ class WeatherService:
         self.api_key = api_key
         self.base_url = "http://api.openweathermap.org/data/2.5"
 
-    def get_daily_forecast(self, city_name: str) -> Optional[List[Dict[str, Any]]]:
+    def get_daily_forecast(self, city_info: str | tuple) -> Optional[List[Dict[str, Any]]]:
         """取得五天預報並彙整"""
+        if isinstance(city_info, tuple):
+            city_name, country_code = city_info
+            query = f"{city_name},{country_code}"
+        else:
+            query = city_info
+            city_name = city_info # 用於錯誤訊息
+
         url = f"{self.base_url}/forecast"
-        params = {'q': city_name, 'appid': self.api_key, 'units': 'metric', 'lang': 'zh_tw'}
-        
+        params = {'q': query, 'appid': self.api_key, 'units': 'metric', 'lang': 'zh_tw'}
+
         try:
             response = requests.get(url, params=params)
             response.raise_for_status()
@@ -60,10 +67,17 @@ class WeatherService:
             print(f"預報查詢時發生非預期錯誤: {e}")
             return None
 
-    def get_current_weather(self, city_name: str) -> Optional[Dict[str, Any]]:
+    def get_current_weather(self, city_info: str | tuple) -> Optional[Dict[str, Any]]:
         """取得即時天氣"""
+        if isinstance(city_info, tuple):
+            city_name, country_code = city_info
+            query = f"{city_name},{country_code}"
+        else:
+            query = city_info
+            city_name = city_info # 用於錯誤訊息
+
         url = f"{self.base_url}/weather"
-        params = {'q': city_name, 'appid': self.api_key, 'units': 'metric', 'lang': 'zh_tw'}
+        params = {'q': query, 'appid': self.api_key, 'units': 'metric', 'lang': 'zh_tw'}
         try:
             resp = requests.get(url, params=params)
             resp.raise_for_status()
@@ -191,7 +205,7 @@ def main():
         selected_region = regions[int(choice1) - 1]
 
         # 第二層：選擇國家
-        countries = list(geo_data[selected_region].keys())
+        countries = list(geo_data[selected_region].keys()) # 國家中文名
         print(f"\n[第二層] {selected_region} -> 請選擇國家：")
         for i, country in enumerate(countries, 1):
             print(f"{i}. {country}")
@@ -206,10 +220,11 @@ def main():
         selected_country = countries[int(choice2) - 1]
 
         # 第三層：選擇城市
-        cities = geo_data[selected_region][selected_country]
+        cities_data = geo_data[selected_region][selected_country] # [{'name': '羅馬', 'en': 'Rome', 'country': 'IT'}, ...]
+        country_code = cities_data[0]['country'] if cities_data else ''
         print(f"\n[第三層] {selected_region} > {selected_country} -> 請選擇城市：")
-        for i, city in enumerate(cities, 1):
-            print(f"{i}. {city}")
+        for i, city_obj in enumerate(cities_data, 1):
+            print(f"{i}. {city_obj['name']}")
         print(f"{len(cities) + 1}. 手動輸入其他城市名稱")
         print("0. 回上層")
 
@@ -217,23 +232,28 @@ def main():
         if choice3 == '0': continue
         
         max_choice3 = len(cities) + 1
-        if not choice3.isdigit() or int(choice3) < 1 or int(choice3) > max_choice3:
+        if not choice3.isdigit() or not (1 <= int(choice3) <= max_choice3):
             print("無效輸入，請重新選擇。")
             continue
 
-        target_city = ""
+        target_city_info = None
+        display_city_name = ""
         idx = int(choice3) - 1
-        if 0 <= idx < len(cities):
-            target_city = cities[idx]
-        elif idx == len(cities):
-            target_city = input("請輸入城市英文名稱 (例如: Paris): ").strip()
+        if 0 <= idx < len(cities_data):
+            city_obj = cities_data[idx]
+            target_city_info = (city_obj['en'], city_obj['country'])
+            display_city_name = city_obj['name']
+        elif idx == len(cities_data):
+            manual_city = input("請輸入城市英文名稱 (例如: Paris): ").strip()
+            target_city_info = manual_city
+            display_city_name = manual_city
         
-        if target_city:
-            print(f"\n正在查詢 {target_city} 的天氣預報...")
-            forecast = weather_svc.get_daily_forecast(target_city)
+        if target_city_info:
+            print(f"\n正在查詢 {display_city_name} 的天氣預報...")
+            forecast = weather_svc.get_daily_forecast(target_city_info)
             if forecast:
                 # 預報表格標頭
-                print(f"\n{target_city} 未來 7 天的天氣預報 (受 API 限制可能顯示 5-6 天):")
+                print(f"\n{display_city_name} 未來 7 天的天氣預報 (受 API 限制可能顯示 5-6 天):")
                 print("日期        | 最低   | 最高   | 降雨率 | 天氣描述")
                 print("------------+--------+--------+--------+----------------------------")
                 for day in forecast:
@@ -245,7 +265,7 @@ def main():
                     print(f"{date:12}| {min_t:6} | {max_t:6} | {pop:6} | {desc}")
 
                 # 顯示當日即時天氣與空氣品質（格式化）
-                current = weather_svc.get_current_weather(target_city)
+                current = weather_svc.get_current_weather(target_city_info)
                 if current:
                     try:
                         lat = current['coord']['lat']
@@ -260,7 +280,7 @@ def main():
                         else:
                             sunset_local = '未知'
 
-                        print(f"\n{target_city} - 即時天氣：")
+                        print(f"\n{display_city_name} - 即時天氣：")
                         print("----------------------------------------")
                         if feels is not None:
                             print(f"體感溫度 : {round(feels,1)} °C")
@@ -298,7 +318,7 @@ def main():
                     except Exception as e:
                         print(f"處理即時天氣/空氣品質時發生錯誤: {e}")
             else:
-                print(f"無法獲取 {target_city} 的天氣資料。")
+                print(f"無法獲取 {display_city_name} 的天氣資料。")
             
             input("\n按 Enter 鍵返回主選單...")
 

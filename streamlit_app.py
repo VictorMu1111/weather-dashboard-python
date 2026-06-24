@@ -19,14 +19,14 @@ def load_geo_data():
 
 # 使用快取來減少重複的 API 請求 (設定 TTL 為 600 秒，即 10 分鐘)
 @st.cache_data(ttl=600)
-def fetch_weather_data(_service, city):
-    current = _service.get_current_weather(city)
+def fetch_weather_data(_service, city_info):
+    current = _service.get_current_weather(city_info)
     if not current:
         return None, None, None
     
     lat, lon = current['coord']['lat'], current['coord']['lon']
     air = _service.get_air_quality(lat, lon)
-    forecast = _service.get_daily_forecast(city)
+    forecast = _service.get_daily_forecast(city_info)
     
     return current, air, forecast
 
@@ -59,23 +59,36 @@ def main():
     countries = list(geo_data[selected_region].keys())
     selected_country = st.sidebar.selectbox("選擇國家", countries)
 
-    cities = geo_data[selected_region][selected_country]
-    selected_city = st.sidebar.selectbox("選擇城市", cities + ["手動輸入"])
+    cities_data = geo_data[selected_region][selected_country]
+    
+    # 建立顯示名稱與值的對應
+    city_options = {city['name']: (city['en'], city['country']) for city in cities_data}
+    
+    # 側邊欄的 selectbox
+    # format_func 讓選單顯示中文名，但實際回傳的值是元組 (英文名, 國家代碼)
+    display_names = list(city_options.keys()) + ["手動輸入"]
+    selected_option = st.sidebar.selectbox("選擇城市", display_names)
 
-    target_city = selected_city
-    if selected_city == "手動輸入":
-        target_city = st.sidebar.text_input("請輸入城市英文名稱", value="London")
+    target_city_info = None
+    display_city_name = ""
+    if selected_option == "手動輸入":
+        manual_city = st.sidebar.text_input("請輸入城市英文名稱", value="London")
+        target_city_info = manual_city
+        display_city_name = manual_city
+    else:
+        target_city_info = city_options[selected_option]
+        display_city_name = selected_option
 
     # 當 target_city 有效時，自動執行查詢
-    if target_city:
+    if target_city_info:
         # 使用優化後的快取函式獲取資料
-        current, air, forecast = fetch_weather_data(weather_svc, target_city)
+        current, air, forecast = fetch_weather_data(weather_svc, target_city_info)
 
         if current:
             # --- 顯示當地時間 ---
             timezone_offset = current.get('timezone', 0)
             local_time = datetime.now(timezone.utc).astimezone(timezone(timedelta(seconds=timezone_offset)))
-            st.subheader(f"📍 {target_city}")
+            st.subheader(f"📍 {display_city_name} ({current.get('name', '')})")
             st.caption(f"當地時間: {local_time.strftime('%Y-%m-%d %H:%M:%S')}")
             
             st.markdown("---")
@@ -148,7 +161,7 @@ def main():
                     })
                 st.table(display_forecast)
         else:
-            st.error(f"⚠️ 無法取得 '{target_city}' 的天氣資料。")
+            st.error(f"⚠️ 無法取得 '{display_city_name}' 的天氣資料。")
             st.warning("請檢查：\n1. 城市英文名稱是否正確 (例如: London, Taipei)\n2. API 金鑰是否有效\n3. 網路連線是否正常")
 
 if __name__ == "__main__":
