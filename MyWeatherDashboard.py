@@ -7,6 +7,7 @@ from pathlib import Path
 import warnings
 from dotenv import load_dotenv
 from typing import List, Optional, Dict, Any
+from ai_service import AIWeatherService
 
 # 忽略 urllib3 的 NotOpenSSLWarning (macOS 系統 Python 常見問題)
 warnings.filterwarnings("ignore", message=".*NotOpenSSLWarning.*")
@@ -313,11 +314,25 @@ def main():
                                         val_str = str(val)
                                     status = get_component_status(k, val)
                                     print(f"{name:9} | {val_str:>7} {status}")
-                            # 顯示健康建議
                             print("\n健康建議:")
                             print(aqi_health_advice(aqi))
                         else:
                             print("無法取得空氣品質資料。")
+
+                        # AI 穿搭與天氣總評
+                        print("\n" + "-"*40)
+                        ai_choice = input("🤖 是否生成 AI 5 天天氣總整理與穿搭建議？(Y/n): ").strip().lower()
+                        if ai_choice != 'n':
+                            print("\n正在生成 AI 分析與穿搭指南，請稍候...")
+                            ai_svc = AIWeatherService()
+                            ai_summary = ai_svc.generate_weather_and_outfit_summary(
+                                city_name=display_city_name,
+                                current_weather=current,
+                                forecast_data=forecast,
+                                aqi_data=air,
+                                style_preference="通用日常"
+                            )
+                            print("\n" + ai_summary)
                     except Exception as e:
                         print(f"處理即時天氣/空氣品質時發生錯誤: {e}")
             else:
